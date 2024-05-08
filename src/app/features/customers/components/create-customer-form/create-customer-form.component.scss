@@ -1,0 +1,43 @@
+.input-container select,
+.input-container input[type="date"] {
+    border-radius: 0.7rem;
+    width: 13rem;
+    height: 2rem;
+    padding: 0.3125rem 0.625rem;
+}
+.input-container label {
+    color: #ffffff; /* Labellerin rengi */
+    border-radius: 0.7rem;
+    width: 13rem;
+    height: 2rem;
+    padding: 0.3125rem 0.625rem;
+    margin-bottom: 3rem;
+    
+}
+label[for="gender"]:after,
+label[for="birthDate"]:after {
+    content: '*';
+    color: #FF8A00;
+    
+}
+.align-label {
+    display: inline-block;
+    width: 150px; /* Adjust as needed */
+    text-align: right;
+    margin-right: 15px; /* Adjust spacing between label and input */
+  }
+   
+  .align-input {
+    width: calc(100% - 180px); /* Adjust based on label width and margin */
+    /* Additional styling for inputs */
+  }
+
+  .input-background{
+    width: 1440px;
+    height: 100%;
+    background-color: #2D355A;
+  }
+
+
+
+

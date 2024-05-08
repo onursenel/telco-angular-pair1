@@ -1,0 +1,6 @@
+<div class="input-container ">
+    <label for="gender">Gender</label>
+    <select *ngFor="let option of options" (ngModelChange)="selectionChange.emit($event)" [(ngModel)]="selectedOption" id="gender" formControlName="gender">
+        <option [value]="option.value">{{option.value}}</option>
+    </select>
+</div>

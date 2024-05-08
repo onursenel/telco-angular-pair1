@@ -1,0 +1,36 @@
+<div class="input-background">
+    <form [formGroup]="form" (submit)="onFormSubmit()">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="eMail"
+                    [required]="true" [control]="form.get('eMail')">
+                    E-Mail
+                </app-input>
+                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text"
+                    inputId="mobilPhone" [required]="true" [control]="form.get('mobilePhone')">
+                    Mobil Phone
+                </app-input>
+            </div>
+            <div class="col-md-6">
+                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text"
+                    inputId="homePhone" [control]="form.get('homePhone')">
+                    Home Phone
+                </app-input>
+
+                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="fax"
+                    [control]="form.get('fax')">
+                    Fax
+                </app-input>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <app-button type="button" buttonClasses="page-controller-left-btn">Previous</app-button>
+                </div>
+                <div class="col-md-6">
+                    <app-button type="submit" buttonClasses="page-controller-right-btn">Create</app-button>
+                </div>
+            </div>
+        </div>
+        <div class="w-100"></div>
+    </form>
+</div>

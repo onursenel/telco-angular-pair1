@@ -1,0 +1,41 @@
+<div class="login-container">
+    <div class="d-flex flex-column">
+        <div class="p-2">
+            <p class="etiya-subtitle">Sign in with your organizational account.</p>
+        </div>
+
+        <div class="p-2">
+            <form [formGroup]="loginForm" (submit)="onFormSubmit()">
+
+            <app-input 
+                inputClasses="genericLoginClass" 
+                labelClasses="genericLabelClass" 
+                type="e-Mail" 
+                inputId="e-Mail"
+                placeholder="E-Mail"    
+                [required]="true"
+                >
+                e-Mail
+            </app-input>
+
+            <app-input 
+                inputClasses="genericLoginClass" 
+                labelClasses="genericLabelClass" 
+                type="password" 
+                inputId="password"
+                placeholder="Password"
+                [required]="true"
+                >
+                Password
+            </app-input>
+                <div class="input-container remember-me">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    <label for="remember-me" class="remember-me-checkbox">Remember me</label>
+                </div> 
+                <app-button type="submit" buttonClasses="login-btn">Login</app-button>
+            </form>
+        </div>
+
+    </div>
+
+</div>

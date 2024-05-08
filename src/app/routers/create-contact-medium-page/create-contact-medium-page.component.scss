@@ -1,0 +1,36 @@
+.background2 {
+    background-image: url('../../../assets/images/background/background-2.png');
+    background-size: cover;
+    background-position: center;
+    height: 519px;
+    margin: 0 auto;
+}
+ 
+.background3 {
+    background-color: #2D355A;
+    background-size: cover;
+}
+ 
+.navbar-position {
+    padding-top: 0.1rem;
+}
+ 
+.header {
+    padding-left: 5rem;
+    padding-top:5rem ;
+    font-family: 'Inter';
+    font-style: bold;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    color: #1E2351;
+}
+.subtext{
+    padding-left: 10rem;
+    padding-top: 3rem;
+    font-family: 'Inter';
+    font-style: bold;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: white;
+}

@@ -1,0 +1,51 @@
+.sidebar {
+    width: 4rem;
+    height: 37rem;
+    background-color: transparent; /* Varsayılan arka plan rengi */
+}
+ 
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.img {
+    width: 4.5rem;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* İkonları merkezlemek için */
+    border-radius: 6px;
+    transition: background-color 0.3s ease; /* Renk değişimi için geçiş efekti */
+    padding: 20px; /* Kutu boyutunu artırmak için padding kullanıldı */
+}
+ 
+.sidebar-item {
+    width: 5rem;
+    height: 7.5rem;
+    background-color: rgba(54, 63, 105, 0.47); /* Varsayılan arka plan rengi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Renk değişimi için geçiş efekti */
+    margin-bottom: 0.1rem; /* Divler arasında boşluk eklemek için margin kullanıldı */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2rem;
+}
+ 
+.sidebar-item.b2c {
+    background-image: url('../../../../assets/images/icons/b2c.png')
+}
+.sidebar-item.b2b {
+    background-image: url('../../../../assets/images/icons/b2b.png')
+}
+.sidebar-item.menu {
+    background-image: url('../../../../assets/images/icons/menu.png')
+}
+.sidebar-item.sign {
+    background-image: url('../../../../assets/images/icons/sign.png')
+}
+.sidebar-item.out {
+    background-image: url('../../../../assets/images/icons/out.png')
+}

@@ -1,0 +1,97 @@
+<app-navbar></app-navbar>
+
+
+<div class="sidebar">
+
+    <div class="row">
+        <div class="col-md-1">
+            <div>
+                <app-sidebar></app-sidebar>
+            </div>
+        </div>
+        <div class="col-md-11">
+            <div class="general-box">s
+                Search Customer
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="box">
+                            <div class="header">Search Filter</div>
+                            <div>
+                                <label class="input-text-label">ID Number</label>
+                                <app-input inputClasses="customer-search-page-input" type="Number"
+                                    [required]="false"></app-input>
+                                <label class="input-text-label">Customer Id</label>
+                                <app-input inputClasses="customer-search-page-input" type="Number"
+                                    [required]="false"></app-input>
+                                <label class="input-text-label">Account Number</label>
+                                <app-input inputClasses="customer-search-page-input" type="Number"
+                                    [required]="false"></app-input>
+                                <label class="input-text-label">GSM Number</label>
+                                <app-input inputClasses="customer-search-page-input" type="Number"
+                                    [required]="false"></app-input>
+                                <label class="input-text-label">First Name</label>
+                                <app-input inputClasses="customer-search-page-input" type="Text"
+                                    [required]="false"></app-input>
+                                <label class="input-text-label">Last Name</label>
+                                <app-input inputClasses="customer-search-page-input" type="Text"
+                                    [required]="false"></app-input>
+                                <label class="input-text-label">Order Number</label>
+                                <app-input inputClasses="customer-search-page-input" type="Number"
+                                    [required]="false"></app-input>
+
+                                <app-button type="button" buttonClasses="customer-search-page-button">Clear</app-button>
+                                <app-button type="submit"
+                                    buttonClasses="customer-search-page-button">Search</app-button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="box">
+                            <div class="header">Search Results</div>
+                            <div class="result-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="table-header" scope="col">Customer ID</th>
+                                            <th class="table-header" scope="col">First Name</th>
+                                            <th class="table-header" scope="col">Second Name</th>
+                                            <th class="table-header" scope="col">Last Name</th>
+                                            <th class="table-header" scope="col">Role</th>
+                                            <th class="table-header" scope="col">ID Number</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="bg-primary">
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>mdo</td>
+                                            <td>mdo</td>
+                                            <td>mdo</td>
+                                            <td>mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>fat</td>
+                                            <td>mdo</td>
+                                            <td>mdo</td>
+                                            <td>mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>twitter</td>
+                                            <td>mdo</td>
+                                            <td>mdo</td>
+                                            <td>mdo</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

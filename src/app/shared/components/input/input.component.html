@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label [class]="labelClasses" [for]="inputId">
+    <ng-content></ng-content>
+    <span class="required" *ngIf="required"> * </span>
+  </label>
+
+  <input [class]="inputClasses" [type]="type" [id]="inputId" [placeholder]="placeholder" [formControl]="control"/>
+</div>

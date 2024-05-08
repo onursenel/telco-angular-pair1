@@ -1,0 +1,57 @@
+<div class="input-background">
+  <form [formGroup]="form" (submit)="onFormSubmit()">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="firstName"
+          [required]="true" [control]="form.get('firstName')">
+          <label for="">First Name</label>
+        </app-input>
+        <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="lastName"
+          [required]="true" [control]="form.get('lastName')">
+          Last Name
+        </app-input>
+        <div class="input-container ">
+          <label for="gender">Gender</label>
+          <select id="gender" formControlName="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="motherName"
+           [control]="form.get('motherName')">
+          Mother Name
+        </app-input>
+        <app-button type="button" buttonClasses="page-controller-left-btn">Cancel</app-button>
+
+
+      </div>
+      <div class="col-md-6">
+
+        <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="middleName"
+          [control]="form.get('middleName')">
+          Middle Name
+        </app-input>
+        <div class="input-container ">
+          <label for="birthDate">Birth Date</label>
+          <input type="date" id="birthDate" formControlName="birthDate">
+        </div>
+        <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="fatherName"
+          [control]="form.get('fatherName')">
+          Father Name
+        </app-input>
+        <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="nationalId"
+          [required]="true" [control]="form.get('nationalId')">
+          Nationality ID
+        </app-input>
+
+        <app-button type="submit" buttonClasses="page-controller-right-btn">Next</app-button>
+
+
+      </div>
+
+
+      <div class="w-100"></div>
+
+    </div>
+  </form>
+</div>
