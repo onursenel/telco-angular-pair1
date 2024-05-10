@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -11,7 +11,13 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   styleUrl: './button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent {
+export class ButtonComponent implements OnInit{
+ 
   @Input() type: string=''
   @Input() buttonClasses: string=''
+
+  ngOnInit(): void {
+   console.log(this.buttonClasses)
+  }
+  
  }

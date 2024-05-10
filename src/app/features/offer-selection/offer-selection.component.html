@@ -1,0 +1,122 @@
+<div class="row">
+    <div class="col-6">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Catalog</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Campaign</button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent ">
+            <div class="tab-pane fade show active border tab-background " style="height: 300px;" id="nav-home"
+                role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="container">
+                    <br>
+                    <span class="text-white">Catalog Selection</span>
+                    <app-select-option [options]="catalogSelectionOptions"></app-select-option>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass"
+                                    type="text" inputId="prodOfferId">
+                                    <label for="">Prod Offer ID</label>
+                                </app-input>
+                            </div>
+                            <div class="col-sm">
+                                <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass"
+                                    type="text" inputId="prodOfferName">
+                                    <label for="">Prod Offer Name</label>
+                                </app-input>
+                            </div>
+                            <div class="col-sm pb-3">
+                                <app-button class="pt-4 " type="button" buttonClasses="edit-button">Search</app-button>
+                            </div>
+                            <div>
+                                <app-table [headers]="tableHeaders"></app-table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+
+
+                <div class="container tab-background">
+                    <br>
+                    <span class="text-white">Campaign Selection</span>
+                    <app-select-option [options]="catalogSelectionOptions"></app-select-option>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass"
+                                    type="text" inputId="prodOfferId">
+                                    <label for="">Campaign ID</label>
+                                </app-input>
+                            </div>
+                            <div class="col-sm">
+                                <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass"
+                                    type="text" inputId="prodOfferName">
+                                    <label for="">Campaign Name</label>
+                                </app-input>
+                            </div>
+                            <div class="col-sm pb-3">
+                                <app-button class="pt-4 " type="button" buttonClasses="edit-button">Search</app-button>
+                            </div>
+                            <div>
+                                <app-table></app-table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-2"></div>
+    <div class="col-4">
+        <div class="row">
+            <span class="fs-5">Basket</span>
+        </div>
+
+        <div class="row" style="margin-right: 45px">
+            <div class="container basket-background pt-4">
+                <div class="row text-white" style="height: 250px;">
+                    <div class="row">
+                        <div class="col-2 mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                class="bi bi-cart-x-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7.354 5.646 8.5 6.793l1.146-1.147a.5.5 0 0 1 .708.708L9.207 7.5l1.147 1.146a.5.5 0 0 1-.708.708L8.5 8.207 7.354 9.354a.5.5 0 1 1-.708-.708L7.793 7.5 6.646 6.354a.5.5 0 1 1 .708-.708" />
+                            </svg>
+                        </div>
+                        <div class="col-7">
+                            <div class="row fw-bolder fs-4">
+                                Sepette
+                            </div>
+                            <div class="row ">
+                                Küçük yazı
+                            </div>
+                        </div>
+                        <div class="col-3 fw-bolder fs-2">
+                            20$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <div class="horizantal mx-auto mb-3"></div>
+                    
+
+                    <span class="fs-2 text-white mb-3">Total Amount : 50$</span>
+
+                    <app-button class="mb-3" type="button" [buttonClasses]="'page-controller-righ2-btn'">Clear</app-button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
