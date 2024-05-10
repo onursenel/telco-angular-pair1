@@ -4,5 +4,19 @@
     <span class="required" *ngIf="required"> * </span>
   </label>
 
-  <input [class]="inputClasses" [type]="type" [id]="inputId" [placeholder]="placeholder" [formControl]="control"/>
+  <input
+    *ngIf="control"
+    [class]="inputClasses"
+    [type]="type"
+    [id]="inputId"
+    [placeholder]="placeholder"
+    [formControl]="control"
+  />
+  <input
+    *ngIf="!control"
+    [class]="inputClasses"
+    [type]="type"
+    [id]="inputId"
+    [placeholder]="placeholder"
+  />
 </div>
