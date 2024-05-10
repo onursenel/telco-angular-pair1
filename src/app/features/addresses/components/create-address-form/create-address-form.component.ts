@@ -4,7 +4,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { CreateAddressRequest } from '../../models/create-address-request';
 import { selectCustomerAddress } from '../../../../shared/store/addresses/customer-address.selector';
 
@@ -52,7 +52,7 @@ export class CreateAddressFormComponent implements OnInit {
   }
   createCustomerAddress() {
 
-    
+
     const customerAddress: CreateAddressRequest = {
       cityId: this.form.value.cityId,
       street: this.form.value.street,
@@ -60,7 +60,7 @@ export class CreateAddressFormComponent implements OnInit {
       description: this.form.value.description,
     };
     this.store.dispatch(setCustomerAddress({ customerAddress }));
-    
+
   }
   onFormSubmit() {
     const myModal = document.getElementById('myModal');

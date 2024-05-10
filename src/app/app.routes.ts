@@ -13,9 +13,9 @@ import { AdressTabEditDeleteComponent } from './routers/adress-tab-edit-delete/a
 export const routes: Routes = [
 
   {
-    path: '', // /
+    path: '',
     pathMatch: 'full',
-    redirectTo: 'create/customer',
+    redirectTo: 'customer/search',
   },
   {
     path: 'auth/login',
