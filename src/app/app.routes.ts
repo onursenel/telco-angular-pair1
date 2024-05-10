@@ -6,6 +6,9 @@ import { AddressInformationPageComponent } from './routers/address-information-p
 import { CreateContactMediumPageComponent } from './routers/create-contact-medium-page/create-contact-medium-page.component';
 import { CreateAddressFormComponent } from './features/addresses/components/create-address-form/create-address-form.component';
 import { CustomerSearchPageComponent } from './routers/customer-search-page/customer-search-page.component';
+import { MidleNavbarComponent } from './shared/components/midle-navbar/midle-navbar.component';
+import { DeletePopupComponent } from './shared/components/delete-popup/delete-popup.component';
+import { AdressTabEditDeleteComponent } from './routers/adress-tab-edit-delete/adress-tab-edit-delete.component';
 
 export const routes: Routes = [
 
@@ -40,6 +43,18 @@ export const routes: Routes = [
     component: CreateAddressFormComponent,
   },
 
+  {
+    path: 'midle-navbar',//test
+    component: MidleNavbarComponent,
+  },
+  {
+    path: 'adrestab', //test
+    component: AdressTabEditDeleteComponent,
+  },
+  {
+    path: 'delete-popup',//test
+    component: DeletePopupComponent,
+  },
   {
     path: 'not-found',
     component: NotFoundPageComponent,

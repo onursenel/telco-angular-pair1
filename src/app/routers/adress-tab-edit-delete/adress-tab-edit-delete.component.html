@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+
+<div class="sidebar">
+    <div class="row">
+        <div class="col-md-1">
+            <div class="sidebar-location">
+                <app-sidebar></app-sidebar>
+            </div>
+        </div>
+        <div><midle-navbar></midle-navbar></div>
+
+        <div class="vertical"><p>Address</p></div>
+        <div class="general-box">
+            <div class="row mb-0">
+                <div class="col-md-6">
+                    <div class="address-box mb-0">
+                        <p>Ankara, 610.Cadde, 33/12, Alize Apartmanı</p>
+                     
+                        <div class="actions">
+                            <div class="menu-btn" (click)="toggleMenu()">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="menu-items" [class.show]="isMenuOpen">
+                                <!-- Edit and Delete buttons -->
+                                <app-button buttonClasses="edit-button">Edit</app-button>
+                                <app-button buttonClasses="edit-button">Delete</app-button>
+                            </div>
+                        </div>
+                        <div class="form-check primary-checkbox">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Select as a primary address
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="address-box">
+                        <app-button type="button" buttonClasses="add-new-adress-button" (click)="openPopup()">Add New Address</app-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

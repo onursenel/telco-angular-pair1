@@ -36,7 +36,8 @@
 
 
 .edit-button {
-    border-radius: 0.75rem;
+    background-color: white;
+    border-radius: 0.5rem;
     color: black;
     width: 4rem;
     height: 2rem;
@@ -57,4 +58,14 @@
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
+}
+.add-new-adress-button{
+    width: 12.5rem;
+    height: 4rem;
+    border-radius: 15px;
+    background-color: white;
+    position: relative;
+    top: 6.5rem;
+    left: 7.5rem;
+    
 }
