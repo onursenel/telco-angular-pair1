@@ -9,7 +9,7 @@
             </div>
         </nav>
         <div class="tab-content" id="nav-tabContent ">
-            <div class="tab-pane fade show active border tab-background " style="height: 300px;" id="nav-home"
+            <div class="tab-pane fade show active border tab-background " style="height: auto;" id="nav-home"
                 role="tabpanel" aria-labelledby="nav-home-tab">
                 <div class="container">
                     <br>
@@ -30,10 +30,10 @@
                                 </app-input>
                             </div>
                             <div class="col-sm pb-3">
-                                <app-button class="pt-4 " type="button" buttonClasses="edit-button">Search</app-button>
+                                <app-button class="pt-4" type="button">Search</app-button>
                             </div>
                             <div>
-                                <app-table [headers]="tableHeaders"></app-table>
+                                <app-table [headers]="catalogTableHeaders" [rows]="catalogTableRows"></app-table>
                             </div>
                         </div>
                     </div>
@@ -61,11 +61,11 @@
                                     <label for="">Campaign Name</label>
                                 </app-input>
                             </div>
-                            <div class="col-sm pb-3">
-                                <app-button class="pt-4 " type="button" buttonClasses="edit-button">Search</app-button>
+                            <div class="col-sm">
+                                <app-button type="button">Search</app-button>
                             </div>
-                            <div>
-                                <app-table></app-table>
+                            <div class="mt-3">
+                                <app-table [headers]="campaignTableHeaders" [rows]="campaingTableRows"></app-table>
                             </div>
                         </div>
                     </div>
@@ -107,11 +107,12 @@
 
                 <div class="row text-center">
                     <div class="horizantal mx-auto mb-3"></div>
-                    
+
 
                     <span class="fs-2 text-white mb-3">Total Amount : 50$</span>
 
-                    <app-button class="mb-3" type="button" [buttonClasses]="'page-controller-righ2-btn'">Clear</app-button>
+                    <app-button class="mb-3" type="button" class="float-right" buttonClasses="page-controller-right-btn">Clear</app-button>
+
                 </div>
             </div>
         </div>

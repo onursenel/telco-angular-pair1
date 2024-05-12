@@ -15,6 +15,8 @@ import { UpdateContactMediumFormComponent } from './features/customers/component
 import { UpdateContactMediumPageComponent } from './routers/update-contact-medium-page/update-contact-medium-page.component';
 import { InfoContactMediumPageComponent } from './routers/info-contact-medium-page/info-contact-medium-page.component';
 import { CustomerAccountsInformationComponent } from './features/customers/components/customer-accounts-information/customer-accounts-information.component';
+import { SubmitOrderPageComponent } from './routers/submit-order-page/submit-order-page.component';
+import { ConfigurationProductPageComponent } from './routers/configuration-product-page/configuration-product-page.component';
 
 export const routes: Routes = [
 
@@ -65,7 +67,14 @@ export const routes: Routes = [
     path: 'offer-selection',
     component: OfferSelectionPageComponent,
   },
-
+  {
+    path: 'submit-order',
+    component: SubmitOrderPageComponent,
+  },
+  {
+    path: 'configuration-product',
+    component: ConfigurationProductPageComponent,
+  },
   {
     path: 'midle-navbar',//test
     component: MidleNavbarComponent,

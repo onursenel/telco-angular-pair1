@@ -1,0 +1,204 @@
+<div class="container configuration-product-background text-white py-2">
+    <div class="row my-3">
+        <div class="col-3">
+            Prod Offer ID:
+        </div>
+        <div class="col-9">
+            71233
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-3">
+            Prod Offer Name:
+        </div>
+        <div class="col-9">
+            8 Mbps' ye kadar / 4 GB kotalı ADSL Internet
+        </div>
+    </div>
+
+
+    <div class="row my-3">
+        <div class="col-sm">
+            PSTN No
+        </div>
+        <div class="col-sm">
+            <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass" type="text"
+                inputId="pstnNo">
+            </app-input>
+        </div>
+        <div class="col-sm">
+            XDSL No
+        </div>
+        <div class="col-sm">
+            <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass" type="text"
+                inputId="xdslNo">
+            </app-input>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-sm">
+            XDSL Username
+        </div>
+        <div class="col-sm">
+            <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass" type="text"
+                inputId="xdslUsername">
+            </app-input>
+        </div>
+        <div class="col-sm">
+            XDSL Password
+        </div>
+        <div class="col-sm">
+            <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass" type="text"
+                inputId="xdslPassword">
+            </app-input>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-3">
+            Bandwith
+        </div>
+        <div class="col-9">
+            <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass" type="text"
+                inputId="bandWith">
+            </app-input>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container configuration-product-background text-white py-2 mt-2">
+    <div class="row my-3">
+        <div class="col-3">
+            Prod Offer ID:
+        </div>
+        <div class="col-9">
+            202610
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-3">
+            Prod Offer Name:
+        </div>
+        <div class="col-9">
+            Müşteri Modemi PR
+        </div>
+    </div>
+
+
+    <div class="row my-3">
+        <div class="col-sm">
+            Modem Brand
+        </div>
+        <div class="col-sm">
+            <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass" type="text"
+                inputId="pstnNo">
+            </app-input>
+        </div>
+        <div class="col-sm">
+            Modem Model
+        </div>
+        <div class="col-sm">
+            <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass" type="text"
+                inputId="xdslNo">
+            </app-input>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-3">
+            Modem SN
+        </div>
+        <div class="col-9">
+            <app-input inputClasses="genericInputClassWithNoSpaces" labelClasses="genericLabelClass" type="text"
+                inputId="bandWith">
+            </app-input>
+        </div>
+    </div>
+</div>
+
+
+<div class="container configuration-product-background text-white py-2 mt-2">
+    <div class="row my-3">
+        <div class="col-3">
+            Prod Offer ID:
+        </div>
+        <div class="col-9">
+            126030
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-3">
+            Prod Offer Name:
+        </div>
+        <div class="col-9">
+            Aktivasyon/Peşin
+        </div>
+    </div>
+</div>
+
+
+<div class="container my-3">
+
+    <h3 class="fw-normal">Address Info</h3>
+    <div class="horizantal my-2"></div>
+    <h3 class="fw-normal">Select a Service Address from Existing Address</h3>
+    <div class="mt-3">
+        <div class="row mb-0 ">
+            <div class="col-4">
+                <div class="address-box mb-3 d-flex flex-column">
+                    <div class="address-text mb-3">
+                        <p>İstanbul, Çeşme Caddesi, 45/8, Dilek Apartmanı, Şok Market Yanı</p>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                            checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Select as a primary address
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="address-box mb-3 d-flex flex-column">
+                    <div class="address-text mb-3">
+                        <p>İstanbul, Çeşme Caddesi, 45/8, Dilek Apartmanı, Şok Market Yanı</p>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                            checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Select as a primary address
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="address-box add-new-address-button">
+                    <app-button type="button" buttonClasses="add-new-adress-btn" (click)="openPopup()">Add New
+                        Address</app-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=" py-5">
+    <div class="row">
+        <div class="col-6">
+
+            <app-button class="mb-3" type="button" class="float-left"
+                buttonClasses="page-controller-left-btn">Previous</app-button>
+        </div>
+        <div class="col-6">
+            <app-button class="mb-3" type="button" class="float-right"
+                buttonClasses="page-controller-right-btn">Submit</app-button>
+        </div>
+    </div>
+</div>

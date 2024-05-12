@@ -24,7 +24,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class OfferSelectionComponent {
   catalogSelectionOptions = [{ value : "select1" , label:"Select1"}] //catalog selections içini bilmiyorum
 
-  tableHeaders: Common.Headers[] = [{label: "Prod Offer Id"}, {label: "Prod Offer Name"}]
+  catalogTableHeaders: Common.Headers[] = [{label: "Prod Offer Id"}, {label: "Prod Offer Name"}]
+  campaignTableHeaders: Common.Headers[] = [{label: "Campaign ID"}, {label: "Prod Offer ID"},{label: "Prod Offer Name"}]
+
+  catalogTableRows = [
+    ['5675', 'Apple'],
+    ['2343', 'Samsung']
+  ]
+
+  campaingTableRows = [
+    ['123', '345', 'Apple'],
+    ['768', '453', 'Samsung']
+  ]
 
  
  }

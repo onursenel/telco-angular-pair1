@@ -1,0 +1,109 @@
+.configuration-product-background{
+    background-color: #363f69e3;
+}
+.sidebar-location{
+    position: absolute;
+    top:10rem;
+    left: 2rem;
+}
+.address-box {
+    background-color: #ffffff;
+    border: 0.1rem solid #000000;
+    padding: 20px;
+    height: 318px;
+    margin-bottom: 10px;
+    place-content: space-between;
+}
+.address-box .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.address-box .actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.address-box .actions button:hover {
+    color: #007bff;
+}
+.address-box .primary-checkbox {
+    margin-top: 10px;
+}
+.vertical { 
+    border-top: 2px solid #53597B;
+    width:  80rem;   
+    position: absolute;
+    top: 20rem;
+    left: 10rem;
+}
+.horizantal { 
+    border-top: 3px solid #000000;
+    width: 100%;   
+}
+.vertical p{
+    position: relative;
+    bottom: 2.5rem;
+    left:1rem;
+    color: red;
+    font-weight: bold; /* Yazıyı kalınlaştır */
+    font-size: 1.2rem; /* Font boyutunu büyüt */
+}
+.form-check{
+    color: black;
+    background-color: #D9D9D9;
+    border-radius: 0.5rem;
+  }
+/* Custom CSS */
+
+.actions {
+    position: absolute;
+    top: 0;
+    left: 25rem;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+}
+
+.add-new-address-button{
+    align-content: center;
+    text-align: center;
+}
+
+
+
+
+///////////////////////////////////////////////hamburger menu////////////
+
+/* Custom CSS */
+.menu-btn {
+    width: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    left: 3rem;
+    top: 0.8rem;
+}
+
+.menu-btn .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #53597B;
+    border-radius: 50%;
+    margin: 2px 0;
+}
+
+.menu-items {
+    background-color: transparent; /* Arka plan şeffaf olacak */
+    border: none;
+    padding: 5px;
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: 0.2rem;
+}
+
+.menu-items.show {
+    display: block;
+}

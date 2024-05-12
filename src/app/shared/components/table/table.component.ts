@@ -19,8 +19,7 @@ export class TableComponent implements OnInit{
   @Input()
   headers: Common.Headers[]= [{label: "header 1"}, {label: "header 2"}];
 
-  @Input()
-  rows: [] = [];
+  @Input() rows: any[] = [];
 
   ngOnInit(): void {
     console.log(this.headers)
