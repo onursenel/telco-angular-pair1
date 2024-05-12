@@ -17,13 +17,36 @@ import { CreateAddressFormComponent } from '../create-address-form/create-addres
   styleUrl: './address-information.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddressInformationComponent { 
+export class AddressInformationComponent {
 
+  openPopup() {
+    const myModal = document.getElementById('myModal');
+    if (myModal) {
+      myModal.classList.add('show');
+      myModal.style.display = 'block';
+      const backdrop = document.createElement('div');
+      backdrop.classList.add('modal-backdrop', 'fade', 'show');
+      document.body.appendChild(backdrop);
+    }
+  }
+  isMenu1Open = false;
+  isMenu2Open = false;
 
+  toggleMenu(menuNumber: number) {
+    if (menuNumber === 1) {
+      this.isMenu1Open = !this.isMenu1Open;
+      this.isMenu2Open = false; // Kapatılması gereken diğer menüyü kapat
+    } else if (menuNumber === 2) {
+      this.isMenu2Open = !this.isMenu2Open;
+      this.isMenu1Open = false; // Kapatılması gereken diğer menüyü kapat
+    }
+  }
 
-  //hamburger menu eklenecek
-  //select as a primary kısmının arka planı çok uzun onu düzenle!
-  //app routes kısmında children yapısını kullan ve ona göre düzenle!
-  //create customer sayfasındaki inputlar sağda solda ayrık bir şekilde düzensizler. Bunu düzenle!
+  closeMenu() {
+    this.isMenu1Open = false;
+    this.isMenu2Open = false;
+  }
+  
+
   
 }

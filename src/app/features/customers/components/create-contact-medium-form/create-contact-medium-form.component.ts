@@ -26,7 +26,7 @@ export class CreateContactMediumFormComponent implements OnInit{
   constructor(
     private fb: FormBuilder,
     private store : Store<{contactMedium:CreateContactMediumRequest}>,
-    private router : Router
+    //private router : Router
   ){}
 
   ngOnInit(): void {

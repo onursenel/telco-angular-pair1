@@ -60,6 +60,7 @@ export class CreateAddressFormComponent implements OnInit {
       description: this.form.value.description,
     };
     this.store.dispatch(setCustomerAddress({ customerAddress }));
+    this.router.navigate(['contact-medium']);
 
   }
   onFormSubmit() {

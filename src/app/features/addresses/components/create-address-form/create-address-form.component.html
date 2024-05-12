@@ -3,17 +3,15 @@
 <div id="myModal" class="modal fade " tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content body-background">
-            
+            <form [formGroup]="form" (submit)="onFormSubmit()">
             <div class="modal-header ">
                 <button type="button" (click)="closePopup()" class="btn-close" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form [formGroup]="form" (submit)="onFormSubmit()">
+                
                 <div class="row">
-                    <!-- Sol taraftaki sütun -->
                     <div class="col">
-                        <!-- Select-option ekleyelim -->
                         <div class="input-container">
                             <label for="city">City</label>
                             <select id="city" formControlName="cityId">
@@ -22,7 +20,7 @@
                             </select>
                         </div>
 
-                        <!-- Örnek bir giriş kutusu ekleme -->
+                        
                         <div class="form-group">
                             <app-input inputClasses="genericInputClass" [required]="true"
                                 labelClasses="genericLabelClass" type="text" inputId="houseNumber" [control]="form.get('houseNumber')">
@@ -30,16 +28,15 @@
                             </app-input>
                         </div>
                     </div>
-                    <!-- Sağ taraftaki sütun -->
                     <div class="col">
-                        <!-- İkinci bir giriş kutusu ekleme -->
+
                         <div class="form-group">
                             <app-input inputClasses="genericInputClass" [required]="true"
                                 labelClasses="genericLabelClass" type="text" inputId="street" [control]="form.get('street')">
                                 Street
                             </app-input>
                         </div>
-                        <!-- Address Description text box -->
+                        
 
                     </div>
                     <div class="form-group ">
@@ -53,14 +50,9 @@
                         <app-button  type="submit"  buttonClasses="page-controller-right-btn"
                             style="padding-left: 10rem;">Save</app-button>
                     </div>
-
                 </div>
-            </form>
             </div>
-            
-
+        </form>
         </div>
-
-
     </div>
 </div>

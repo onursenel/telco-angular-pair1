@@ -4,6 +4,7 @@ import { NavbarComponent } from '../../shared/components/navbar/navbar.component
 import { InputComponent } from '../../shared/components/input/input.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
+import { CustomerSearchFormComponent } from '../../features/customers/components/customer-search-form/customer-search-form.component';
 
 @Component({
   selector: 'etiya-customer-search-page',
@@ -13,7 +14,8 @@ import { SidebarComponent } from '../../shared/components/sidebar/sidebar.compon
     NavbarComponent,
     InputComponent,
     ButtonComponent,
-    SidebarComponent
+    SidebarComponent,
+    CustomerSearchFormComponent
   ],
   templateUrl: './customer-search-page.component.html',
   styleUrl: './customer-search-page.component.scss',

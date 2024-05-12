@@ -1,0 +1,57 @@
+.general-box{
+    background-color: white;
+    border: solid black 2px;
+    height: 600px;
+    margin-right: 2.1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.label-background{
+    color: white;
+}
+
+.box {
+    background-color: white;
+    border:  solid black 2px;
+    padding: 10px;
+    text-align: left;
+    
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .container {
+    margin-top: 50px;
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .header{
+    background-color: white;
+  }
+
+  .input-text-label{
+    color: #FF8A00;
+    padding-bottom: 0.5rem;
+
+  }
+  
+  .genericInputClass{
+    padding: 0.1rem 0.2rem;
+  }
+  .result-body{
+    height: 510px;
+  }
+
+  .table-header{
+    color: #FF8A00;
+  }
+  .table-background-color1{
+    background-color:#2D355A;
+  }
