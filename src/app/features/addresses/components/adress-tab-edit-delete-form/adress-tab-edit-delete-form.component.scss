@@ -1,37 +1,69 @@
-.popup-letter-text{
-    position:absolute;
-     padding-top: 0.2rem;
-     padding-left: 60rem;
-     color: #FF8A00;
+.sidebar-location{
+    position: absolute;
+    top:10rem;
+    left: 2rem;
 }
-
-label[for="exampleSelect"]:after {
-    content: '*';
-    color: #FF8A00;
-    margin-left: 0.2rem;
+.general-box{
+    position: absolute;
+    top: 25rem;
+    left: 10rem;
 }
-
-.body-background{
-    background-color: #363F69;
-}
-
-.input-container label {
-    color: #ffffff; /* Labellerin rengi */
-    margin-bottom: 3rem;
-    border-radius: 7rem;
-    
-}
-label[for="city"]:after {
-    content: '*';
-    color: #FF8A00;
-    padding-right: 5rem;
-}
-
-.description-header{
-    color: white;
-    
-}
-
-.addAddressButton{
+.address-box {
     background-color: #ffffff;
+    border: 0.1rem solid #000000;
+    padding: 20px;
+    width: 471px;
+    height: 318px;
+    margin-bottom: 10px;
+}
+.address-box .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.address-box .actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.address-box .actions button:hover {
+    color: #007bff;
+}
+.address-box .primary-checkbox {
+    margin-top: 10px;
+}
+.vertical { 
+    border-top: 2px solid #53597B;
+    width:  80rem;   
+    position: absolute;
+    top: 20rem;
+    left: 10rem;
+}
+.vertical p{
+    position: relative;
+    bottom: 2.5rem;
+    left:1rem;
+    color: red;
+    font-weight: bold; 
+    font-size: 1.2rem; 
+}
+.form-check{
+    color: black;
+    background-color: #D9D9D9;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 0.8rem;
+    left: 1.5rem;
+  }
+
+.actions {
+    position: absolute;
+    top: 0;
+    left: 25rem;
+    display: flex;
+}
+.toggle-menu{
+    position: absolute;
+    left: 27.5rem;
+    top: 1rem;
 }

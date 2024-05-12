@@ -10,6 +10,11 @@ import { DeletePopupComponent } from './shared/components/delete-popup/delete-po
 import { AdressTabEditDeleteComponent } from './routers/adress-tab-edit-delete/adress-tab-edit-delete.component';
 import { MidleNavbarComponent } from './shared/components/midle-navbar/midle-navbar.component';
 import { OfferSelectionPageComponent } from './routers/offer-selection-page/offer-selection-page.component';
+import { ContacMediumInformationComponent } from './features/customers/components/contac-medium-information/contac-medium-information.component';
+import { UpdateContactMediumFormComponent } from './features/customers/components/update-contact-medium-form/update-contact-medium-form.component';
+import { UpdateContactMediumPageComponent } from './routers/update-contact-medium-page/update-contact-medium-page.component';
+import { InfoContactMediumPageComponent } from './routers/info-contact-medium-page/info-contact-medium-page.component';
+import { CustomerAccountsInformationComponent } from './features/customers/components/customer-accounts-information/customer-accounts-information.component';
 
 export const routes: Routes = [
 
@@ -31,6 +36,10 @@ export const routes: Routes = [
     component: AddressInformationPageComponent,
   },
   {
+    path: 'address-edit-delete',
+    component: AdressTabEditDeleteComponent,
+  },
+  {
     path: 'customer/search',
     component: CustomerSearchPageComponent,
   },
@@ -39,6 +48,15 @@ export const routes: Routes = [
     path: 'contact-medium',
     component: CreateContactMediumPageComponent,
   },
+  {
+    path: 'info-contact-medium',
+    component: InfoContactMediumPageComponent,
+  },
+  {
+    path: 'update-contact-medium',
+    component: UpdateContactMediumPageComponent,
+  },
+  
   {
     path: 'create/address',
     component: CreateAddressFormComponent,
@@ -59,6 +77,10 @@ export const routes: Routes = [
   {
     path: 'delete-popup',//test
     component: DeletePopupComponent,
+  },
+  {
+    path: 'test',//test
+    component: CustomerAccountsInformationComponent,
   },
   {
     path: 'not-found',

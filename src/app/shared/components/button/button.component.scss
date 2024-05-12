@@ -68,9 +68,7 @@
     position: relative;
     top: 6.5rem;
     left: 7.5rem;
-
 }
-
 .create-customer-button-in-customer-search-page {
 
     background: #1E2351;
@@ -83,4 +81,30 @@
     border: 1px solid #FFFFFF;
     width: 263px;
     height: 47px;
+}
+
+.midle-navbar-button {
+    width: 12.5rem;
+    height: 2.7rem;
+    color: #000; /* İstediğiniz renk */
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.3125rem 0.625rem;
+    background-color: #D9D9D9;
+}
+.cancel-save-button {
+
+    border-radius: 0.75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    margin: 1rem;
+    color: rgba(45, 53, 90, 0.4);
+    height: 27px;
+    background-color: white;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+
 }

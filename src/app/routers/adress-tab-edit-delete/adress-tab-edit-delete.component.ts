@@ -6,7 +6,6 @@ import { DeletePopupComponent } from '../../shared/components/delete-popup/delet
 import { MidleNavbarComponent } from '../../shared/components/midle-navbar/midle-navbar.component';
 import { InputComponent } from '../../shared/components/input/input.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
-import { AddressInformationComponent } from '../../features/addresses/components/address-information/address-information.component';
 import { AdressTabEditDeleteFormComponent } from '../../features/addresses/components/adress-tab-edit-delete-form/adress-tab-edit-delete-form.component';
 
 @Component({
@@ -29,23 +28,5 @@ import { AdressTabEditDeleteFormComponent } from '../../features/addresses/compo
 
 })
 export class AdressTabEditDeleteComponent {
-  openPopup() {
-    const myModal = document.getElementById('myModal');
-    if (myModal) {
-      myModal.classList.add('show');
-      myModal.style.display = 'block';
-      const backdrop = document.createElement('div');
-      backdrop.classList.add('modal-backdrop', 'fade', 'show');
-      document.body.appendChild(backdrop);
-    }
-  }
-  isMenuOpen = false;
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
-  closeMenu() {
-    this.isMenuOpen = false;
-  }
+ 
 }

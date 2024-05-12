@@ -1,0 +1,16 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group .col {
+    margin-bottom: 6.43rem; // İstediğiniz boşluk miktarını ayarlayabilirsiniz
+}
+.button-box{
+    position: absolute;
+    right:13rem;
+}
+.cancel-button{
+    position: absolute;
+    right:8rem;
+}

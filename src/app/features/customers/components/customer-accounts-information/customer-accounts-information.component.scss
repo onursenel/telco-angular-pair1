@@ -1,0 +1,24 @@
+/* styles.scss */
+.table-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #ccc;
+    }
+    .expand-icon {
+        cursor: pointer;
+    }
+    .close-icon, .view-icon {
+        margin-right: 10px;
+        cursor: pointer;
+    }
+}
