@@ -17,6 +17,9 @@ import { InfoContactMediumPageComponent } from './routers/info-contact-medium-pa
 import { CustomerAccountsInformationComponent } from './features/customers/components/customer-accounts-information/customer-accounts-information.component';
 import { SubmitOrderPageComponent } from './routers/submit-order-page/submit-order-page.component';
 import { ConfigurationProductPageComponent } from './routers/configuration-product-page/configuration-product-page.component';
+import { CreateBillingAccountPageComponent } from './routers/create-billing-account-page/create-billing-account-page.component';
+import { UpdateBillingAccountPageComponent } from './routers/update-billing-account-page/update-billing-account-page.component';
+import { CustomerInformationPageComponent } from './routers/customer-information-page/customer-information-page.component';
 
 export const routes: Routes = [
 
@@ -86,6 +89,18 @@ export const routes: Routes = [
   {
     path: 'delete-popup',//test
     component: DeletePopupComponent,
+  },
+  {
+    path: 'create-billing-account',
+    component: CreateBillingAccountPageComponent,
+  },
+  {
+    path: 'update-billing-account',
+    component: UpdateBillingAccountPageComponent,
+  },
+  {
+    path: 'customer-information',
+    component: CustomerInformationPageComponent,
   },
   {
     path: 'test',//test

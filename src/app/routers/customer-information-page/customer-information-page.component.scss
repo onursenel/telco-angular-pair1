@@ -1,0 +1,41 @@
+.sidebar-location{
+    position: absolute;
+    top:10rem;
+    left: 2rem;
+}
+
+.vertical { 
+    border-top: 2px solid #53597B;
+    width:  80rem;   
+    position: absolute;
+    top: 20rem;
+    left: 10rem;
+}
+.vertical p{
+    position: relative;
+    bottom: 2.5rem;
+    left:1rem;
+    color: red;
+    font-weight: bold; /* Yazıyı kalınlaştır */
+    font-size: 1.2rem; /* Font boyutunu büyüt */
+}
+.form{
+    position: absolute;
+    top:25rem;
+    left: 5rem;
+}
+.bi-pencil{
+    position: absolute;
+    left: 12rem;
+    bottom: 4rem;
+    width:1rem;
+    height:1rem;
+}
+.bi-trash{
+    position: absolute;
+    left: 12rem;
+    bottom: 4rem;
+    width:1rem;
+    height:1rem;
+    margin-left: 2rem;
+}

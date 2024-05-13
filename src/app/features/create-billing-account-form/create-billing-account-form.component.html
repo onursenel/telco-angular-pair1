@@ -1,0 +1,21 @@
+<div>
+    <div class="header">
+        <p>Create Billing Account</p>
+    </div>
+
+    <div class="input-side">
+        <app-input inputClasses="genericInputClass" type="text" inputId="accountName" [required]="true">Account
+            Name</app-input>
+
+        <app-input inputClasses="large-input-box" type="text" inputId="accountDescription" [required]="true">Account
+            Description</app-input>
+    </div>
+
+    <div class="vertical">
+        <p>Address Info</p>
+    </div>
+    <app-adress-tab-edit-delete-form></app-adress-tab-edit-delete-form>
+
+    <app-button type="submit" class="float-right" buttonClasses="page-controller-right-btn">Create</app-button>
+    <app-button type="button" buttonClasses="page-controller-left-btn">Cancel</app-button>
+</div>

@@ -7,6 +7,9 @@ import { AddressInformationPageComponent } from './routers/address-information-p
 import { CreateContactMediumPageComponent } from './routers/create-contact-medium-page/create-contact-medium-page.component';
 import { CreateAddressFormComponent } from './features/addresses/components/create-address-form/create-address-form.component';
 import { CustomerSearchPageComponent } from './routers/customer-search-page/customer-search-page.component';
+import { CreateBillingAccountPageComponent } from './routers/create-billing-account-page/create-billing-account-page.component';
+import { UpdateBillingAccountPageComponent } from './routers/update-billing-account-page/update-billing-account-page.component';
+import { CustomerInformationPageComponent } from './routers/customer-information-page/customer-information-page.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +22,10 @@ import { CustomerSearchPageComponent } from './routers/customer-search-page/cust
     AddressInformationPageComponent,
     CreateContactMediumPageComponent,
     CreateAddressFormComponent,
-    CustomerSearchPageComponent
+    CustomerSearchPageComponent,
+    CreateBillingAccountPageComponent,
+    UpdateBillingAccountPageComponent,
+    CustomerInformationPageComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
