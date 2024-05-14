@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.component';
@@ -27,7 +26,7 @@ import { CustomerApiService } from '../../services/customerApi.service';
 export class CustomerSearchFormComponent implements OnInit{ 
   searchForm! : FormGroup;
   constructor(
-    private formBuilder:FormBuilder
+    private formBuilder:FormBuilder,
     private customerApiService : CustomerApiService
   ){}
   ngOnInit(): void {

@@ -25,8 +25,8 @@ export class CustomerAccountsInformationComponent {
   ]
  
 
-  midleTableHeaders: Common.Headers[] = [{label: "Product ID"}, {label: "Product Name Action"}, {label: "Campaign Name"}, {label: "Campaign ID"}, {label: "Action"}]
-  midleTableRows = [
+  middleTableHeaders: Common.Headers[] = [{label: "Product ID"}, {label: "Product Name Action"}, {label: "Campaign Name"}, {label: "Campaign ID"}, {label: "Action"}]
+  middleTableRows = [
     ['001', 'ADSL 8MB','null','null','..'],
   ]
  
