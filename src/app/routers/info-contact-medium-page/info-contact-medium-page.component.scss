@@ -5,28 +5,16 @@
 }
 
 .vertical { 
-    border-top: 2px solid #53597B;
+    border-top: 3px solid #53597B;
     width:  80rem;   
-    position: absolute;
-    top: 20rem;
-    left: 10rem;
+    margin-top: 5rem;
 }
-.vertical p{
+.vertical h4{
     position: relative;
-    bottom: 2.5rem;
-    left:1rem;
-    color: red;
-    font-weight: bold; /* Yazıyı kalınlaştır */
-    font-size: 1.2rem; /* Font boyutunu büyüt */
-}
-.form{
-    position: absolute;
-    top:25rem;
-    left: 5rem;
+    bottom: 3rem;
+    left:2rem;
 }
 .bi-pencil{
-    position: absolute;
-    left: 12rem;
     bottom: 4rem;
     width:1rem;
     height:1rem;

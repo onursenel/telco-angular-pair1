@@ -17,6 +17,7 @@ import { InfoContactMediumPageComponent } from './routers/info-contact-medium-pa
 import { CustomerAccountsInformationComponent } from './features/customers/components/customer-accounts-information/customer-accounts-information.component';
 import { SubmitOrderPageComponent } from './routers/submit-order-page/submit-order-page.component';
 import { ConfigurationProductPageComponent } from './routers/configuration-product-page/configuration-product-page.component';
+import { CustomerAccountsInformationPageComponent } from './routers/customer-accounts-information-page/customer-accounts-information-page.component';
 
 export const routes: Routes = [
 
@@ -44,7 +45,12 @@ export const routes: Routes = [
   {
     path: 'customer/search',
     component: CustomerSearchPageComponent,
+  }, 
+  {
+    path: 'customer/account/information',
+    component: CustomerAccountsInformationPageComponent,
   },
+
 
   {
     path: 'contact-medium',
@@ -89,7 +95,7 @@ export const routes: Routes = [
   },
   {
     path: 'test',//test
-    component: CustomerAccountsInformationComponent,
+    component: CustomerAccountsInformationPageComponent,
   },
   {
     path: 'not-found',
