@@ -1,46 +1,29 @@
 
-    <div class="table-responsive">
-        <table class="table accordion">
-            <thead>
-                <tr>
-                    <th scope="col">Account Status</th>
-                    <th scope="col">Account Number</th>
-                    <th scope="col">Account Name</th>
-                    <th scope="col">Account Type</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr data-bs-toggle="collapse" data-bs-target="#r1">
-                    <td scope="row"> <i class="bi bi-chevron-down"></i></td>
-                    <td>Cell1</td>
-                    <td>Cel2</td>
-                    <td>Cell3</td>
-                    <td>Cell4</td>
-                </tr>
-                <tr class="collapse accordion-collapse" id="r1" data-bs-parent=".table">
-                   <app-table></app-table>
-                </tr>
-                <tr data-bs-toggle="collapse" data-bs-target="#r2">
-                    <td scope="row"> <i class="bi bi-chevron-down"></i></td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                </tr>
-                <tr class="collapse accordion-collapse" id="r2" data-bs-parent=".table">
-                    <td colspan="5"> Item 2 detail .. This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow. </td>
-                </tr>
-                <tr data-bs-toggle="collapse" data-bs-target="#r3">
-                    <td scope="row"> <i class="bi bi-chevron-down"></i></td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                </tr>
-                <tr class="collapse accordion-collapse" id="r3" data-bs-parent=".table">
-                    <td colspan="5"> Item 3 detail .. This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow. </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="table-responsive">
+    <table class="table accordion mt-5">
+        <thead>
+            <tr>
+                <app-table [headers]="mainTableHeaders" [showLeftIcon]="false" ></app-table>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-bs-toggle="collapse" data-bs-target="#r1">
+                <app-table  [headers]="mainTableHeaders2" [rows]="mainTableRows" [showLeftIcon]="false" ></app-table>
+            </tr>
+
+            <tr class="collapse accordion-collapse" id="r1" data-bs-parent=".table">
+                <td colspan="5">
+                    <div class="container">
+               <app-table [headers]="midleTableHeaders" [rows]="midleTableRows" [showLeftIcon]="false" ></app-table>
+            </div>
+            <div class="d-flex justify-content-center">
+            <app-button class="btn mx-2" buttonClasses="customer-accounts-button">Start New Sale</app-button>
+            <app-button class="btn mx-2" buttonClasses="customer-accounts-button">Transfer</app-button>
+            <app-button class="btn mx-2" buttonClasses="customer-accounts-button">Service Address Change</app-button>
+            </div>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>

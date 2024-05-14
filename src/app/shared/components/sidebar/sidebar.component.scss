@@ -33,18 +33,6 @@
     background-position: center;
     background-size: 2rem;
 }
-.sidebar-item.b2c {
-    background-image: url('../../../../assets/images/icons/b2c.png')
-}
-.sidebar-item.b2b {
-    background-image: url('../../../../assets/images/icons/b2b.png')
-}
-.sidebar-item.menu {
-    background-image: url('../../../../assets/images/icons/menu.png')
-}
-.sidebar-item.sign {
-    background-image: url('../../../../assets/images/icons/sign.png')
-}
-.sidebar-item.out {
-    background-image: url('../../../../assets/images/icons/out.png')
+.rotate-90{
+    transform: rotate(90deg);
 }

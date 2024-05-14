@@ -16,17 +16,5 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MiddleNavbarComponent { 
-  selectedElement: HTMLElement | null = null; // Seçili elementin referansını tutacak değişken
-
-  changeColor(event: Event) {
-    const element = event.target as HTMLElement;
-    if (element && element !== this.selectedElement) {
-      // Seçili eleman varsa ve tıklanan eleman önceki seçili eleman değilse
-      if (this.selectedElement) {
-        this.selectedElement.style.backgroundColor = '#D9D9D9'; // Önceki seçili elemanın rengini sıfırla
-      }
-      this.selectedElement = element; // Yeni seçili elemanı güncelle
-      element.style.backgroundColor = '#C8CFF4'; // Tıklanan divin arka plan rengini değiştir
-    }
-  }
+  
 }

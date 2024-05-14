@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { InputComponent } from '../../shared/components/input/input.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-configuration-product',
@@ -16,6 +17,10 @@ import { ButtonComponent } from '../../shared/components/button/button.component
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfigurationProductComponent { 
+  constructor(
+    private router: Router
+  ){}
+
   openPopup() {
     const myModal = document.getElementById('myModal');
     if (myModal) {
@@ -26,4 +31,15 @@ export class ConfigurationProductComponent {
       document.body.appendChild(backdrop);
     }
   }
+
+  navigatePrevious(){
+    this.router.navigate(["/offer-selection"])
+  }
+  navigateNext(){
+    this.router.navigate(["/submit-order"])
+  }
+
+
+
+
 }
