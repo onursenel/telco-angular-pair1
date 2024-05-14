@@ -6,6 +6,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
 import { TableComponent } from '../../shared/components/table/table.component';
 import { Common } from '../../shared/models/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-offer-selection',
@@ -22,6 +23,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OfferSelectionComponent {
+  constructor(
+    private router: Router
+  ){}
+
   catalogSelectionOptions = [{ value : "select1" , label:"Select1"}] //catalog selections içini bilmiyorum
 
   catalogTableHeaders: Common.Headers[] = [{label: "Prod Offer Id"}, {label: "Prod Offer Name"}]
@@ -37,5 +42,8 @@ export class OfferSelectionComponent {
     ['768', '453', 'Samsung']
   ]
 
+  navigate(){
+    this.router.navigate(["/configuration-product"])
+  }
  
  }

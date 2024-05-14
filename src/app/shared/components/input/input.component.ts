@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -21,4 +21,11 @@ export class InputComponent {
   @Input() inputClasses: string = '';
   @Input() required: boolean = false;
   @Input() control: FormControl | any | null;
+  passwordType: string = "password"
+  showPassword: boolean = false;
+  
+  togglePasswordVisibility(): void {
+  this.showPassword = !this.showPassword;
+  this.passwordType = this.showPassword ? 'text' : 'password';
+}
 }

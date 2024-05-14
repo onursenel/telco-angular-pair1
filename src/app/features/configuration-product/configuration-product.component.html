@@ -194,11 +194,11 @@
         <div class="col-6">
 
             <app-button class="mb-3" type="button" class="float-left"
-                buttonClasses="page-controller-left-btn">Previous</app-button>
+                buttonClasses="page-controller-left-btn" (click)="navigatePrevious()" >Previous</app-button>
         </div>
         <div class="col-6">
             <app-button class="mb-3" type="button" class="float-right"
-                buttonClasses="page-controller-right-btn">Submit</app-button>
+                buttonClasses="page-controller-right-btn" (click)="navigateNext()">Next</app-button>
         </div>
     </div>
 </div>

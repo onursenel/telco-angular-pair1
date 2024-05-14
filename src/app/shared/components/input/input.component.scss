@@ -27,7 +27,7 @@
 }
 
 .required {
-    
+
     color: #FF8A00;
     padding-right: 0.5rem;
 }
@@ -42,7 +42,9 @@
     box-sizing: border-box;
     border-radius: 5px;
 }
-.contact-medium-update-input{
+
+
+.contact-medium-update-input {
     width: 18rem;
     height: 1.8rem;
     border: 2px;
@@ -51,7 +53,14 @@
     border-style: double;
 }
 
-.contact-medium-update-label{
+.contact-medium-update-label {
     color: #000000;
     margin-right: 2rem;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    border-radius: 5px;
 }
