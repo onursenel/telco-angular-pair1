@@ -6,12 +6,13 @@
 }
 
 .genericInputClass {
+    justify-content: center;
     border-radius: 0.7rem;
     width: 13rem;
     height: 2rem;
     padding: 0.3125rem 0.625rem;
     margin-bottom: 3rem;
-    margin-left: 5rem;
+    margin-left: 2rem;
 
 }
 
@@ -24,6 +25,7 @@
 
 .genericLabelClass {
     color: white;
+    width: 11rem;
 }
 
 .required {

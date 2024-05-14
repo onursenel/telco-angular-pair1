@@ -5,7 +5,7 @@ import { NotFoundPageComponent } from './routers/not-found-page/not-found-page.c
 import { CreateCustomerPageComponent } from './routers/create-customer-page/create-customer-page.component';
 import { AddressInformationPageComponent } from './routers/address-information-page/address-information-page.component';
 import { CreateContactMediumPageComponent } from './routers/create-contact-medium-page/create-contact-medium-page.component';
-import { CreateAddressFormComponent } from './features/addresses/components/create-address-form/create-address-form.component';
+import { CreateAddressFormComponent } from './features/customers/components/create-address-form/create-address-form.component';
 import { CustomerSearchPageComponent } from './routers/customer-search-page/customer-search-page.component';
 import { CreateBillingAccountPageComponent } from './routers/create-billing-account-page/create-billing-account-page.component';
 import { UpdateBillingAccountPageComponent } from './routers/update-billing-account-page/update-billing-account-page.component';

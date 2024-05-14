@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
-import { MidleNavbarComponent } from '../../shared/components/midle-navbar/midle-navbar.component';
+import { MiddleNavbarComponent } from '../../shared/components/middle-navbar/middle-navbar.component';
 import { Router, RouterModule } from '@angular/router';
 import { CustomerInformationComponent } from '../../features/customers/components/customer-information/customer-information.component';
 
@@ -13,7 +13,7 @@ import { CustomerInformationComponent } from '../../features/customers/component
     CommonModule,
     NavbarComponent,
     SidebarComponent,
-    MidleNavbarComponent,
+    MiddleNavbarComponent,
     RouterModule,
     CustomerInformationComponent
   ],

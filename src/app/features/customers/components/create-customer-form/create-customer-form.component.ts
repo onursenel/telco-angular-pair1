@@ -5,7 +5,7 @@ import { InputComponent } from '../../../../shared/components/input/input.compon
 import { SelectOptionComponent } from '../../../../shared/components/select-option/select-option.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CustomerApiService } from '../../services/customerApi.service';
-import { CreateCustomerRequest } from '../../models/create-customer-request';
+import { CreateCustomerRequest } from '../../models/customer/create-customer-request';
 import { Store, select } from '@ngrx/store';
 import { setIndividualCustomer } from '../../../../shared/store/customers/individual-customer.action';
 import { Router } from '@angular/router';
@@ -29,7 +29,8 @@ export class CreateCustomerFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private store : Store<{individualCustomer:CreateCustomerRequest}>,
-    private router : Router
+    private router : Router,
+    private customerApiService : CustomerApiService
   ){}
 
   ngOnInit(): void {
@@ -42,6 +43,7 @@ export class CreateCustomerFormComponent implements OnInit {
       });
   }
 
+  
   createForm(){
       this.form= this.fb.group({
       firstName: ['', Validators.required],
@@ -50,8 +52,8 @@ export class CreateCustomerFormComponent implements OnInit {
       gender: ['',Validators.required],
       motherName: ['',Validators.required],
       fatherName: [''],
-      nationalId: ['',Validators.required],
       birthDate: ['',Validators.required],
+      nationalityId: ['',[Validators.required, Validators.maxLength(11),Validators.pattern('[0-9]+')]],
     });
   }
   createCustomer(){
@@ -63,12 +65,14 @@ export class CreateCustomerFormComponent implements OnInit {
       motherName: this.form.value.motherName,
       fatherName: this.form.value.fatherName,
       birthDate: this.form.value.birthDate,
-      nationalId: this.form.value.nationalId,
+      nationalityId: this.form.value.nationalityId,
     };
+    
     this.store.dispatch(setIndividualCustomer({individualCustomer}));
-    this.router.navigate(['address/information']);
+    this.router.navigate(['address-information']);
     
   }
+
   onFormSubmit() {
     console.log(this.form);
 

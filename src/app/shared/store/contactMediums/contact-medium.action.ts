@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { CreateContactMediumRequest } from '../../../features/customers/models/create-contact-medium-request';
+import { CreateContactMediumRequest } from '../../../features/customers/models/contact-medium/create-contact-medium-request';
 
 export const setContactMedium = createAction(
   '[Contact Medium] set Contact Medium',

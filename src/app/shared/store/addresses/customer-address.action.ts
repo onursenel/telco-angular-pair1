@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { CreateAddressRequest } from '../../../features/addresses/models/create-address-request';
+import { CreateAddressRequest } from '../../../features/customers/models/address/create-address-request';
 
 
 export const setCustomerAddress = createAction(

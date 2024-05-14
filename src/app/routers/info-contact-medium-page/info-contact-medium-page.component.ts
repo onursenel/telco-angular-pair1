@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MidleNavbarComponent } from '../../shared/components/midle-navbar/midle-navbar.component';
+import { MiddleNavbarComponent } from '../../shared/components/middle-navbar/middle-navbar.component';
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { UpdateContactMediumFormComponent } from '../../features/customers/components/update-contact-medium-form/update-contact-medium-form.component';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
@@ -12,7 +12,7 @@ import { Router, RouterModule } from '@angular/router';
   standalone: true,
   imports: [
     CommonModule,
-    MidleNavbarComponent,
+    MiddleNavbarComponent,
     NavbarComponent,
     ContacMediumInformationComponent,
     SidebarComponent,

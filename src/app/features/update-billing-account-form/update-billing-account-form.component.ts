@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ToggleMenuComponent } from '../../shared/components/toggle-menu/toggle-menu.component';
-import { CreateAddressFormComponent } from '../addresses/components/create-address-form/create-address-form.component';
+import { CreateAddressFormComponent } from '../customers/components/create-address-form/create-address-form.component';
 import { InputComponent } from '../../shared/components/input/input.component';
-import { AdressTabEditDeleteFormComponent } from '../addresses/components/adress-tab-edit-delete-form/adress-tab-edit-delete-form.component';
+import { AddressTabEditDeleteFormComponent } from '../customers/components/address-tab-edit-delete-form/address-tab-edit-delete-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 
@@ -15,7 +15,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
     ToggleMenuComponent,
     CreateAddressFormComponent,
     InputComponent,
-    AdressTabEditDeleteFormComponent,
+    AddressTabEditDeleteFormComponent,
     ReactiveFormsModule,
     ButtonComponent
   ],

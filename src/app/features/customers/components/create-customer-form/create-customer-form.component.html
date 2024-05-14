@@ -1,5 +1,5 @@
 <div class="input-background">
-  <form [formGroup]="form" (submit)="onFormSubmit()">
+  <form [formGroup]="form" (submit)="onFormSubmit()" class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="firstName"
@@ -18,14 +18,14 @@
           </select>
         </div>
         <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="motherName"
-           [control]="form.get('motherName')">
+          [control]="form.get('motherName')">
           Mother Name
         </app-input>
         <app-button type="button" buttonClasses="page-controller-left-btn">Cancel</app-button>
 
 
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 ">
 
         <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="middleName"
           [control]="form.get('middleName')">
@@ -39,10 +39,23 @@
           [control]="form.get('fatherName')">
           Father Name
         </app-input>
-        <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="nationalId"
-          [required]="true" [control]="form.get('nationalId')">
+        <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="nationalityId"
+          [required]="true" [control]="form.get('nationalityId')">
           Nationality ID
         </app-input>
+        <div *ngIf="form.get('nationalityId') as nationalityIdControl" class="validation-message mt-1">
+          <div  *ngIf="nationalityIdControl.errors && (nationalityIdControl.dirty || nationalityIdControl.touched)">
+            <div *ngIf="nationalityIdControl.errors['required']">
+              Nationality ID is required.
+            </div>
+            <div *ngIf="nationalityIdControl.errors['maxLength']">
+              Nationality ID must be at most 11 characters long.
+            </div>
+            <div *ngIf="nationalityIdControl.errors['pattern']">
+              Nationality ID must contain only numbers.
+            </div>
+          </div>
+        </div>
 
         <app-button type="submit" class="float-right" buttonClasses="page-controller-right-btn">Next</app-button>
 

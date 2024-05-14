@@ -4,14 +4,11 @@ import { NotFoundPageComponent } from './routers/not-found-page/not-found-page.c
 import { CreateCustomerPageComponent } from './routers/create-customer-page/create-customer-page.component';
 import { AddressInformationPageComponent } from './routers/address-information-page/address-information-page.component';
 import { CreateContactMediumPageComponent } from './routers/create-contact-medium-page/create-contact-medium-page.component';
-import { CreateAddressFormComponent } from './features/addresses/components/create-address-form/create-address-form.component';
 import { CustomerSearchPageComponent } from './routers/customer-search-page/customer-search-page.component';
 import { DeletePopupComponent } from './shared/components/delete-popup/delete-popup.component';
-import { AdressTabEditDeleteComponent } from './routers/adress-tab-edit-delete/adress-tab-edit-delete.component';
-import { MidleNavbarComponent } from './shared/components/midle-navbar/midle-navbar.component';
+import { AddressTabEditDeleteComponent } from './routers/address-tab-edit-delete/address-tab-edit-delete.component';
+import { MiddleNavbarComponent } from './shared/components/middle-navbar/middle-navbar.component';
 import { OfferSelectionPageComponent } from './routers/offer-selection-page/offer-selection-page.component';
-import { ContacMediumInformationComponent } from './features/customers/components/contac-medium-information/contac-medium-information.component';
-import { UpdateContactMediumFormComponent } from './features/customers/components/update-contact-medium-form/update-contact-medium-form.component';
 import { UpdateContactMediumPageComponent } from './routers/update-contact-medium-page/update-contact-medium-page.component';
 import { InfoContactMediumPageComponent } from './routers/info-contact-medium-page/info-contact-medium-page.component';
 import { CustomerAccountsInformationComponent } from './features/customers/components/customer-accounts-information/customer-accounts-information.component';
@@ -29,23 +26,23 @@ export const routes: Routes = [
     redirectTo: 'customer/search',
   },
   {
-    path: 'auth/login',
+    path: 'auth-login',
     component: LoginPageComponent,
   },
   {
-    path: 'create/customer',//children olucak : contact medium  ve address information vs...
+    path: 'create-customer',//children olucak : contact medium  ve address information vs...
     component: CreateCustomerPageComponent,
   },
   {
-    path: 'address/information',
+    path: 'address-information',
     component: AddressInformationPageComponent,
   },
   {
     path: 'address-edit-delete',
-    component: AdressTabEditDeleteComponent,
+    component: AddressTabEditDeleteComponent,
   },
   {
-    path: 'customer/search',
+    path: 'customer-search',
     component: CustomerSearchPageComponent,
   },
 
@@ -63,10 +60,6 @@ export const routes: Routes = [
   },
   
   {
-    path: 'create/address',
-    component: CreateAddressFormComponent,
-  },
-  {
     path: 'offer-selection',
     component: OfferSelectionPageComponent,
   },
@@ -79,12 +72,12 @@ export const routes: Routes = [
     component: ConfigurationProductPageComponent,
   },
   {
-    path: 'midle-navbar',//test
-    component: MidleNavbarComponent,
+    path: 'middle-navbar',//test
+    component: MiddleNavbarComponent,
   },
   {
     path: 'address-tab', //test
-    component: AdressTabEditDeleteComponent,
+    component: AddressTabEditDeleteComponent,
   },
   {
     path: 'delete-popup',//test

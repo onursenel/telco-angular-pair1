@@ -32,6 +32,19 @@ label[for="birthDate"]:after {
     /* Additional styling for inputs */
   }
 
+  .validation-message{
+    color: red; /* Hata mesajının rengi */
+    font-size: 0.9em; /* Hata mesajının font boyutu */
+     /* Hata mesajının üst boşluğu */
+    
+  }
+
+  .form-group{
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+    justify-content: center;
+  }
 
 
 

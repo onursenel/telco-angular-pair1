@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="eMail"
-                    [required]="true" [control]="form.get('eMail')">
+                    [required]="true" [control]="form.get('email')">
                     E-Mail
                 </app-input>
                 <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text"
@@ -27,7 +27,7 @@
                     <app-button type="button" buttonClasses="page-controller-left-btn">Previous</app-button>
                 </div>
                 <div class="col-md-6">
-                    <app-button type="submit" class="float-right" buttonClasses="page-controller-right-btn">Create</app-button>
+                    <app-button type="submit" class="float-right" [ngClass]="{'':isformValid,'':!isformValid}" buttonClasses="page-controller-right-btn">Create</app-button>
                 </div>
             </div>
         </div>

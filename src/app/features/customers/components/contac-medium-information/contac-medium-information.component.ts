@@ -15,4 +15,5 @@ import { InputComponent } from '../../../../shared/components/input/input.compon
 })
 export class ContacMediumInformationComponent {
 
+
  }

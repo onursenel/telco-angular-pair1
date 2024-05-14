@@ -1,4 +1,4 @@
-import { CreateCustomerRequest } from "../../../features/customers/models/create-customer-request";
+import { CreateCustomerRequest } from "../../../features/customers/models/customer/create-customer-request";
 
 
 export interface IndividualCustomerState {
@@ -14,6 +14,6 @@ export const initialIndividualCustomerState: IndividualCustomerState = {
     motherName: '',
     fatherName: '',
     birthDate: null,
-    nationalId: '',
+    nationalityId: '',
   },
 };

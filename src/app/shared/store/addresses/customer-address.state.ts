@@ -1,4 +1,4 @@
-import { CreateAddressRequest } from "../../../features/addresses/models/create-address-request";
+import { CreateAddressRequest } from "../../../features/customers/models/address/create-address-request";
 
 
 export interface CustomerAddressState {
@@ -10,6 +10,7 @@ export const initialCustomerAddressState: CustomerAddressState = {
     houseNumber: '',
     street: '',
     description: '',
-    cityId: 0
+    cityId: '',
+    customerId: ''
   },
 };
