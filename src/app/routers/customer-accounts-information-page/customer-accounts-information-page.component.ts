@@ -7,6 +7,7 @@ import { InputComponent } from '../../shared/components/input/input.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { CustomerAccountsInformationComponent } from '../../features/customers/components/customer-accounts-information/customer-accounts-information.component';
 import { MiddleNavbarComponent } from '../../shared/components/middle-navbar/middle-navbar.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-customer-accounts-information-page',
@@ -19,7 +20,8 @@ import { MiddleNavbarComponent } from '../../shared/components/middle-navbar/mid
     MiddleNavbarComponent,
     InputComponent,
     ButtonComponent,
-    CustomerAccountsInformationComponent
+    CustomerAccountsInformationComponent,
+    RouterModule,
   ],
   templateUrl: './customer-accounts-information-page.component.html',
   styleUrl:'./customer-accounts-information-page.component.scss',

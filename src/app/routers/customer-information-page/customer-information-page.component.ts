@@ -15,7 +15,8 @@ import { CustomerInformationComponent } from '../../features/customers/component
     SidebarComponent,
     MiddleNavbarComponent,
     RouterModule,
-    CustomerInformationComponent
+    CustomerInformationComponent,
+    RouterModule,
   ],
   templateUrl: './customer-information-page.component.html',
   styleUrl: './customer-information-page.component.scss',

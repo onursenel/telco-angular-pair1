@@ -5,6 +5,7 @@ import { MiddleNavbarComponent } from '../../shared/components/middle-navbar/mid
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { UpdateContactMediumFormComponent } from '../../features/customers/components/update-contact-medium-form/update-contact-medium-form.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-update-contact-medium-page',
@@ -16,6 +17,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
     NavbarComponent,
     UpdateContactMediumFormComponent,
     ButtonComponent,
+    RouterModule,
   ],
   templateUrl: './update-contact-medium-page.component.html',
   styleUrl:'./update-contact-medium-page.component.scss',
