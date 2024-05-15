@@ -6,16 +6,16 @@
                 <div class="header">Search Filter</div>
                 <form  [formGroup]="searchForm">
                     <label class="input-text-label" >ID Number</label>
-                    <app-input inputClasses="customer-search-page-input" [control]="searchForm.get('idNumber')" type="Number"
+                    <app-input inputClasses="customer-search-page-input" [control]="searchForm.get('idNumber')" type="text"
                         [required]="false"></app-input>
                     <label class="input-text-label">Customer Id</label>
-                    <app-input inputClasses="customer-search-page-input" type="Number"
+                    <app-input inputClasses="customer-search-page-input" type="text"
                         [required]="false" [control]="searchForm.get('customerId')"></app-input>
                     <label class="input-text-label">Account Number</label>
-                    <app-input inputClasses="customer-search-page-input" type="Number"
+                    <app-input inputClasses="customer-search-page-input" type="text"
                         [required]="false" [control]="searchForm.get('accountNumber')"></app-input>
                     <label class="input-text-label">GSM Number</label>
-                    <app-input inputClasses="customer-search-page-input" type="Number"
+                    <app-input inputClasses="customer-search-page-input" type="text"
                         [required]="false" [control]="searchForm.get('gsmNumber')"></app-input>
                     <label class="input-text-label">First Name</label>
                     <app-input inputClasses="customer-search-page-input" type="Text"
@@ -24,7 +24,7 @@
                     <app-input inputClasses="customer-search-page-input" type="Text"
                         [required]="false" [control]="searchForm.get('lastName')"> </app-input>
                     <label class="input-text-label">Order Number</label>
-                    <app-input inputClasses="customer-search-page-input" type="Number"
+                    <app-input inputClasses="customer-search-page-input" type="text"
                         [required]="false" [control]="searchForm.get('orderNumber')"></app-input>
 
                     <app-button type="button" buttonClasses="customer-search-page-button" [isDisable]="disableClearButton"
@@ -52,33 +52,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-primary">
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>mdo</td>
-                                <td>mdo</td>
-                                <td>mdo</td>
-                                <td>mdo</td>
+                            <tr *ngFor="let customer of searchFilterResponse" class="bg-primary">
+                                <td>{{customer.id}}</td>
+                                <td>{{customer.firstName}}</td>
+                                <td>{{customer.middleName}}</td>
+                                <td>{{customer.lastName}}</td>
+                                <td>{{customer.role}}</td>
+                                <td>{{customer.nationalityId}}</td>
                             </tr>
-                            <tr>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>fat</td>
-                                <td>mdo</td>
-                                <td>mdo</td>
-                                <td>mdo</td>
-                            </tr>
-                            <tr>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>twitter</td>
-                                <td>mdo</td>
-                                <td>mdo</td>
-                                <td>mdo</td>
-                            </tr>
+                            
                         </tbody>
                     </table>
-                    <div>
+                    <div *ngIf="!searchFilterResponse.length">
                         <p>No customer found! Would you like 
                             to create the customer?</p>
                             <app-button routerLink="/create/customer"  type="button" buttonClasses="create-customer-button-in-customer-search-page">Create Customer </app-button>
