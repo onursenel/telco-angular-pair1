@@ -48,7 +48,7 @@
     padding-right: 2rem;
     padding-bottom: 2rem;
     margin: 1rem;
-    color: rgba(45, 53, 90, 0.4);
+    color: rgb(45, 53, 90);
     height: 27px;
     background-color: white;
     font-family: 'Inter';
@@ -120,4 +120,8 @@
     font-size: 16px;
     font-weight: 600;
     
+}
+
+.disable-button{
+    color: grey;
 }

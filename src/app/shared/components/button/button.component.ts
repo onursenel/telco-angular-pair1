@@ -15,6 +15,7 @@ export class ButtonComponent implements OnInit{
  
   @Input() type: string=''
   @Input() buttonClasses: string=''
+  @Input() isDisable: boolean = false
 
   ngOnInit(): void {
    console.log(this.buttonClasses)

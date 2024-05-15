@@ -1,1 +1,1 @@
-<button [type]="type" class="{{buttonClasses}}"><ng-content></ng-content></button> 
+<button [ngClass]="isDisable?'disable-button':''" [type]="type" [disabled]="isDisable" class="{{buttonClasses}}"><ng-content></ng-content></button> 
