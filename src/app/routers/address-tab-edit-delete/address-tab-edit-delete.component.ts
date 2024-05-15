@@ -7,6 +7,7 @@ import { MiddleNavbarComponent } from '../../shared/components/middle-navbar/mid
 import { InputComponent } from '../../shared/components/input/input.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { AddressTabEditDeleteFormComponent } from '../../features/customers/components/address-tab-edit-delete-form/address-tab-edit-delete-form.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-address-tab-edit-delete',
@@ -20,6 +21,7 @@ import { AddressTabEditDeleteFormComponent } from '../../features/customers/comp
     InputComponent,
     ButtonComponent,
     AddressTabEditDeleteFormComponent,
+    RouterModule,
 
 
   ],

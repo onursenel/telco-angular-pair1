@@ -1,13 +1,9 @@
-.sidebar-location{
-    position: absolute;
-    top:10rem;
-    left: 2rem;
-}
-
 .vertical { 
-    border-top: 3px solid #53597B;
+    border-top: 2px solid #53597B;
     width:  80rem;   
-    margin-top: 5rem;
+    position: absolute;
+    top: 20rem;
+    left: 10rem;
 }
 .vertical h4{
     position: relative;
@@ -18,4 +14,7 @@
     bottom: 4rem;
     width:1rem;
     height:1rem;
+}
+.form{
+    margin-top: 10rem;
 }

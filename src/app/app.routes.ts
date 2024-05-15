@@ -18,8 +18,50 @@ import { CustomerAccountsInformationPageComponent } from './routers/customer-acc
 import { CreateBillingAccountPageComponent } from './routers/create-billing-account-page/create-billing-account-page.component';
 import { UpdateBillingAccountPageComponent } from './routers/update-billing-account-page/update-billing-account-page.component';
 import { CustomerInformationPageComponent } from './routers/customer-information-page/customer-information-page.component';
-
+import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
 export const routes: Routes = [
+
+  {
+    path: 'info',
+    component: MainLayoutComponent,
+    children: [
+      {
+        path: 'address-edit-delete', // test
+        component: AddressTabEditDeleteComponent,
+      },
+      {
+        path: 'customer-information', // test
+        component: CustomerInformationPageComponent,
+      },
+      {
+        path: 'customer-account', // test
+        component: CustomerAccountsInformationPageComponent,
+      },
+      {
+        path: 'contact-medium-information', // test
+        component: InfoContactMediumPageComponent,
+      },
+      {
+        path: 'update-contact-medium', // test
+        component: UpdateContactMediumPageComponent,
+      },
+
+    ],
+  },
+
+  // {
+  //   path: 'customer',
+  //   component: MainLayoutComponent,
+  //   children: [
+  //     {
+  //       path: 'search', // test
+  //       component: CustomerSearchPageComponent,
+  //     },
+ 
+  //   ],
+  // },
+  
+
 
   {
     path: '',
@@ -60,10 +102,7 @@ export const routes: Routes = [
     path: 'info-contact-medium',
     component: InfoContactMediumPageComponent,
   },
-  {
-    path: 'update-contact-medium',
-    component: UpdateContactMediumPageComponent,
-  },
+
   
   {
     path: 'offer-selection',
@@ -103,7 +142,7 @@ export const routes: Routes = [
   },
   {
     path: 'test',//test
-    component: CustomerAccountsInformationPageComponent,
+    component: MainLayoutComponent,
   },
   {
     path: 'not-found',

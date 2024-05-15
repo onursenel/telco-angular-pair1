@@ -26,7 +26,7 @@ export class InfoContactMediumPageComponent {
   constructor(private router: Router) {}
 
   navigateToUpdatePage() {
-    this.router.navigateByUrl('/update-contact-medium');
+    this.router.navigateByUrl('/info/update-contact-medium');
   }
 }
 
