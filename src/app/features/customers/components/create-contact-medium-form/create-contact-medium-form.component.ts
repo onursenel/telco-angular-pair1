@@ -16,6 +16,7 @@ import { CreateCustomerRequest } from '../../models/customer/create-customer-req
 import { selectIndividualCustomer } from '../../../../shared/store/customers/individual-customer.selector';
 import { selectCustomerAddress } from '../../../../shared/store/addresses/customer-address.selector';
 import { switchMap } from 'rxjs';
+import { ErrorMessagesPipe } from '../../../../core/pipes/error-messages.pipe';
 
 @Component({
   selector:'app-create-contact-medium-form',
@@ -25,11 +26,11 @@ import { switchMap } from 'rxjs';
     InputComponent,
     ButtonComponent,
     ReactiveFormsModule,
+    ErrorMessagesPipe,
     RouterModule,
   ],
   templateUrl: './create-contact-medium-form.component.html',
   styleUrl: './create-contact-medium-form.component.scss',
-  changeDetection : ChangeDetectionStrategy.OnPush
 })
 export class CreateContactMediumFormComponent implements OnInit{
   form: FormGroup;
@@ -99,9 +100,17 @@ export class CreateContactMediumFormComponent implements OnInit{
   
   createForm() {
     this.form = this.fb.group({
-      email: ['', Validators.required],
-      homePhone: ['', Validators.required],
-      mobilePhone: ['', Validators.required],
+      email: ['', [
+        Validators.required,
+        Validators.pattern(/\b[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\.)+[A-Z|a-z]{2,}\b/),
+      ]],
+      homePhone: ['', [
+        Validators.maxLength(11),
+      ]],
+      mobilePhone: ['', [
+        Validators.required,
+        Validators.maxLength(11),
+      ]],
       fax: ['', Validators.required],
     });
     

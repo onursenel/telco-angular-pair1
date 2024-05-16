@@ -10,6 +10,7 @@ import { Store, select } from '@ngrx/store';
 import { setIndividualCustomer } from '../../../../shared/store/customers/individual-customer.action';
 import { Router } from '@angular/router';
 import { selectIndividualCustomer } from '../../../../shared/store/customers/individual-customer.selector';
+import { ErrorMessagesPipe } from '../../../../core/pipes/error-messages.pipe';
 
 @Component({
   selector: 'app-create-customer-form',
@@ -19,6 +20,7 @@ import { selectIndividualCustomer } from '../../../../shared/store/customers/ind
     ButtonComponent,
     InputComponent,
     SelectOptionComponent,
+    ErrorMessagesPipe,
     ReactiveFormsModule
   ],
   templateUrl: './create-customer-form.component.html',
@@ -46,14 +48,32 @@ export class CreateCustomerFormComponent implements OnInit {
   
   createForm(){
       this.form= this.fb.group({
-      firstName: ['', Validators.required],
-      middleName: [''],
-      lastName: ['',Validators.required],
+      firstName: ['', [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(30),
+      ]],
+      middleName: ['',[
+        Validators.minLength(2),
+        Validators.maxLength(10),
+      ]],
+      lastName: ['',[
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(50),
+      ]],
       gender: ['',Validators.required],
-      motherName: ['',Validators.required],
+      motherName: ['',[
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(30),
+      ]],
       fatherName: [''],
       birthDate: ['',Validators.required],
-      nationalityId: ['',[Validators.required, Validators.maxLength(11),Validators.pattern('[0-9]+')]],
+      nationalityId: ['',[
+        Validators.required,
+        Validators.pattern('^[1-9]{1}[0-9]{9}[02468]{1}$'),
+      ]],
     });
   }
   createCustomer(){
@@ -74,10 +94,11 @@ export class CreateCustomerFormComponent implements OnInit {
   }
 
   onFormSubmit() {
-    console.log(this.form);
-
     if (this.form.invalid) {
       console.error('Form is invalid');
+      console.error(this.form.get('firstName').hasError('required'));
+      console.error(this.form.get('firstName').hasError('minlength'));
+      console.error(this.form.get('nationalityId').hasError('pattern'));
       return;
     }
     this.createCustomer();
@@ -87,4 +108,6 @@ export class CreateCustomerFormComponent implements OnInit {
     this.form.reset();
     this.router.navigate(['/customer-search'])
   }
+
+
  }

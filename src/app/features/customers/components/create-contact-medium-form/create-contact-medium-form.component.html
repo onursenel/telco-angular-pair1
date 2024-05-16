@@ -6,18 +6,50 @@
                     [required]="true" [control]="form.get('email')">
                     E-Mail
                 </app-input>
-                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text"
+                <div
+            class="mt-3"
+            *ngIf="
+              form.controls['email'].errors !== null &&
+              form.get('email')?.touched
+            "
+          >
+            <p class="text-danger fw-bold">
+              {{ form.get("email")?.errors | errorMessages }}
+            </p>
+          </div>
+                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="number"
                     inputId="mobilPhone" [required]="true" [control]="form.get('mobilePhone')">
                     Mobil Phone
                 </app-input>
+                <div
+            class="mt-3"
+            *ngIf="
+              form.controls['mobilePhone'].errors !== null &&
+              form.get('mobilePhone')?.touched
+            "
+          >
+            <p class="text-danger fw-bold">
+              {{ form.get("mobilePhone")?.errors | errorMessages }}
+            </p>
+          </div>
             </div>
             <div class="col-md-6">
-                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text"
+                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="number"
                     inputId="homePhone" [control]="form.get('homePhone')">
                     Home Phone
                 </app-input>
-
-                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="fax"
+                <div
+            class="mt-3"
+            *ngIf="
+              form.controls['homePhone'].errors !== null &&
+              form.get('homePhone')?.touched
+            "
+          >
+            <p class="text-danger fw-bold">
+              {{ form.get("homePhone")?.errors | errorMessages }}
+            </p>
+          </div>
+                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="number" inputId="fax"
                     [control]="form.get('fax')">
                     Fax
                 </app-input>
