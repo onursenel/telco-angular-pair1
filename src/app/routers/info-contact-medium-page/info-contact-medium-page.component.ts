@@ -4,8 +4,8 @@ import { MiddleNavbarComponent } from '../../shared/components/middle-navbar/mid
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import { UpdateContactMediumFormComponent } from '../../features/customers/components/update-contact-medium-form/update-contact-medium-form.component';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
-import { ContacMediumInformationComponent } from '../../features/customers/components/contac-medium-information/contac-medium-information.component';
 import { Router, RouterModule } from '@angular/router';
+import { ContacMediumInformationComponent } from '../../features/customers/components/contac-medium-information/contac-medium-information.component';
 
 @Component({
   selector: 'app-info-contact-medium-page',
@@ -26,7 +26,7 @@ export class InfoContactMediumPageComponent {
   constructor(private router: Router) {}
 
   navigateToUpdatePage() {
-    this.router.navigateByUrl('/info/update-contact-medium');
+    this.router.navigateByUrl('/home/contact-medium/update');
   }
 }
 

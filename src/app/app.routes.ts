@@ -21,53 +21,47 @@ import { CustomerInformationPageComponent } from './routers/customer-information
 import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
 export const routes: Routes = [
 
+
+
+
   {
-    path: 'info',
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'customer-search',
+  },
+  {
+    path: 'home',
+    pathMatch:'prefix',
     component: MainLayoutComponent,
     children: [
       {
-        path: 'address-edit-delete', // test
-        component: AddressTabEditDeleteComponent,
-      },
-      {
-        path: 'customer-information', // test
+        path: 'customer-information', 
         component: CustomerInformationPageComponent,
       },
       {
-        path: 'customer-account', // test
+        path: 'address', 
+        component: AddressTabEditDeleteComponent,
+      },
+      
+      {
+        path: 'account', 
         component: CustomerAccountsInformationPageComponent,
       },
       {
-        path: 'contact-medium-information', // test
+        path: 'contact-medium', 
         component: InfoContactMediumPageComponent,
       },
       {
-        path: 'update-contact-medium', // test
+        path: 'contact-medium/update', 
         component: UpdateContactMediumPageComponent,
       },
 
     ],
   },
 
-  // {
-  //   path: 'customer',
-  //   component: MainLayoutComponent,
-  //   children: [
-  //     {
-  //       path: 'search', // test
-  //       component: CustomerSearchPageComponent,
-  //     },
- 
-  //   ],
-  // },
   
 
 
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'customer/search',
-  },
   {
     path: 'auth-login',
     component: LoginPageComponent,
@@ -80,30 +74,15 @@ export const routes: Routes = [
     path: 'address-information',
     component: AddressInformationPageComponent,
   },
-  {
-    path: 'address-edit-delete',
-    component: AddressTabEditDeleteComponent,
-  },
+ 
   {
     path: 'customer-search',
     component: CustomerSearchPageComponent,
   }, 
   {
-    path: 'customer/account/information',
-    component: CustomerAccountsInformationPageComponent,
-  },
-
-
-  {
     path: 'contact-medium',
     component: CreateContactMediumPageComponent,
   },
-  {
-    path: 'info-contact-medium',
-    component: InfoContactMediumPageComponent,
-  },
-
-  
   {
     path: 'offer-selection',
     component: OfferSelectionPageComponent,
@@ -116,18 +95,7 @@ export const routes: Routes = [
     path: 'configuration-product',
     component: ConfigurationProductPageComponent,
   },
-  {
-    path: 'middle-navbar',//test
-    component: MiddleNavbarComponent,
-  },
-  {
-    path: 'address-tab', //test
-    component: AddressTabEditDeleteComponent,
-  },
-  {
-    path: 'delete-popup',//test
-    component: DeletePopupComponent,
-  },
+ 
   {
     path: 'create-billing-account',
     component: CreateBillingAccountPageComponent,
@@ -137,14 +105,6 @@ export const routes: Routes = [
     component: UpdateBillingAccountPageComponent,
   },
   {
-    path: 'customer-information',
-    component: CustomerInformationPageComponent,
-  },
-  {
-    path: 'test',//test
-    component: MainLayoutComponent,
-  },
-  {
     path: 'not-found',
     component: NotFoundPageComponent,
   },
@@ -152,6 +112,25 @@ export const routes: Routes = [
     path: '**', // Her path'de çalışır. En sona yazılmalı.
     redirectTo: 'not-found',
   }
+
+
+  // {
+  //   path: 'customer-information',
+  //   component: CustomerInformationPageComponent,
+  // },
+   // {
+  //   path: 'address-tab', //test
+  //   component: AddressTabEditDeleteComponent,
+  // },
+    // {
+  //   path: 'info-contact-medium',
+  //   component: InfoContactMediumPageComponent,
+  // },
+
+    // {
+  //   path: 'customer/account/information',
+  //   component: CustomerAccountsInformationPageComponent,
+  // },
 
   //Adres rootuna city eklenecek
 ];

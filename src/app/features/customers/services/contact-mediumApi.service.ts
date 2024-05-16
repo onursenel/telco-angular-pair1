@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { GetListResponse } from '../../../shared/models/get-list-response';
 import { ContactMediumListResponse } from '../models/contact-medium/contact-medium-list-response';
 import { CreateContactMediumRequest } from '../models/contact-medium/create-contact-medium-request';
@@ -15,6 +15,13 @@ import { GetContactMediumResponse } from '../models/contact-medium/get-contact-m
 export class ContactMediumApiService {
 
   constructor(private http: HttpClient) { }
+
+  private customerIdSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  customerId$: Observable<string> = this.customerIdSubject.asObservable();
+
+  setCustomerId(customerId: string): void {
+    this.customerIdSubject.next(customerId);
+  }
 
   getList(): Observable<GetListResponse<ContactMediumListResponse[]>> {
     return this.http.get<GetListResponse<ContactMediumListResponse[]>>(
