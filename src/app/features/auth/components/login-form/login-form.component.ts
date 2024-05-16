@@ -22,7 +22,7 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
 })
 export class LoginFormComponent implements OnInit {
 
-
+/*
   loginForm: FormGroup = this.formBuilder.group({
     userName: [
       '',
@@ -33,6 +33,8 @@ export class LoginFormComponent implements OnInit {
       [Validators.required, Validators.minLength(2), Validators.maxLength(20)]
     ]
   });
+*/
+loginForm: FormGroup ;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -42,9 +44,9 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
 
-      userName: ['', Validators.required],
-      password: ['', Validators.required]
-    })
+      userName: ['', Validators.required, Validators.email],
+      password: ['', Validators.required, Validators.minLength(2), Validators.maxLength(20)]
+    });
   }
   login() {
     const request: PostLoginRequest = {
@@ -73,6 +75,7 @@ export class LoginFormComponent implements OnInit {
       console.error('Form is invalid');
       return;
     }
+    
     this.login();
   }
 }
