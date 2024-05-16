@@ -64,7 +64,6 @@ export class CreateCustomerFormComponent implements OnInit {
       ]],
       gender: ['',Validators.required],
       motherName: ['',[
-        Validators.required,
         Validators.minLength(2),
         Validators.maxLength(30),
       ]],
