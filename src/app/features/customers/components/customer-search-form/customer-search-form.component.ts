@@ -92,7 +92,6 @@ export class CustomerSearchFormComponent implements OnInit {
       this.searchFilterResponse = data
       this.cdr.detectChanges()
     })
-
   }
 
   clearForm(){

@@ -14,6 +14,7 @@
                 inputId="userName"
                 placeholder="Username"    
                 [required]="true"
+                [control]="loginForm.get('userName')"
                 >
                 Username
             </app-input>
@@ -25,6 +26,7 @@
                 inputId="password"
                 placeholder="Password"
                 [required]="true"
+                [control]="loginForm.get('password')"
                 >
                 Password
             </app-input>
