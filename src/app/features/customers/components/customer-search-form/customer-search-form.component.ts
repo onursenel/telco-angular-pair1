@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.component';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { TableComponent } from '../../../../shared/components/table/table.component';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CustomerApiService } from '../../services/customerApi.service';
@@ -37,6 +37,7 @@ export class CustomerSearchFormComponent implements OnInit {
     private customerApiService: CustomerApiService,
     private searchApiService : SearchApiService,
     private cdr: ChangeDetectorRef,
+    private router:Router
   ) { }
   
   ngOnInit(): void {
@@ -96,6 +97,10 @@ export class CustomerSearchFormComponent implements OnInit {
 
   clearForm(){
     this.searchForm.reset()
+  }
+
+  goCreateForm(){
+    this.router.navigate(['/create-customer'])
   }
 
 }

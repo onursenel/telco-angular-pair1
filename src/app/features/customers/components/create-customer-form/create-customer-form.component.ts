@@ -82,4 +82,9 @@ export class CreateCustomerFormComponent implements OnInit {
     }
     this.createCustomer();
   }
+
+  onCancel() {
+    this.form.reset();
+    this.router.navigate(['/customer-search'])
+  }
  }
