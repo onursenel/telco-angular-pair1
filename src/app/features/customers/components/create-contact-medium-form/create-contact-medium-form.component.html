@@ -1,4 +1,4 @@
-<div class="input-background">
+<div class="input-background container">
     <form [formGroup]="form" (submit)="onFormSubmit()">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -24,7 +24,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <app-button type="button" buttonClasses="page-controller-left-btn">Previous</app-button>
+                    <app-button type="button" buttonClasses="page-controller-left-btn" (click)="goPrevious()">Previous</app-button>
                 </div>
                 <div class="col-md-6">
                     <app-button type="submit" class="float-right" [ngClass]="{'':isformValid,'':!isformValid}" buttonClasses="page-controller-right-btn">Create</app-button>

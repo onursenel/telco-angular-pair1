@@ -116,7 +116,7 @@ export class CreateContactMediumFormComponent implements OnInit{
       customerId: null,
     };
     this.store.dispatch(setContactMedium({ contactMedium }));
-    this.router.navigate(['/home/create-address']);
+    this.router.navigate(['/address-information']);
   }
 
   onFormSubmit() {
