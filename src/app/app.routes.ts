@@ -35,6 +35,11 @@ export const routes: Routes = [
     pathMatch:'prefix',
     component: MainLayoutComponent,
     children: [
+      // {
+      //   path: '',
+      //   pathMatch: 'full',
+      //   component: CustomerSearchPageComponent,
+      // },
       {
         path: 'customer-information', 
         component: CustomerInformationPageComponent,
