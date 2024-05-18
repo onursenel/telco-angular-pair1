@@ -11,6 +11,7 @@ import { CustomerApiService } from '../../services/customerApi.service';
 import { first } from 'rxjs';
 import { SearchApiService } from '../../services/searchApi.service';
 import { SearchResponse } from '../../models/search/search-response';
+import { GetListResponse } from '../../../../shared/models/get-list-response';
 
 @Component({
   selector: 'app-customer-search-form',
@@ -31,6 +32,17 @@ import { SearchResponse } from '../../models/search/search-response';
 export class CustomerSearchFormComponent implements OnInit {
   searchForm!: FormGroup;
   searchFilterResponse: SearchResponse[] = [];
+
+  isFirtstRender: boolean = false;
+  filteredCustomers: GetListResponse<SearchResponse>;
+  customerCount: number = 0;
+  stopSubmit: boolean = true;
+  maxValue: number = 30;
+  page: number = 0;
+  hasPrevious: boolean;
+  hasNext: boolean;
+  activePage: number = 1;
+  totalPage: number;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -79,6 +91,8 @@ export class CustomerSearchFormComponent implements OnInit {
 
   search() {
     const searchRequest  = {
+      size: 5,
+      page: this.page,
       id : this.searchForm.get("customerId").value,
       nationalityId : this.searchForm.get("idNumber").value,
       firstName : this.searchForm.get("firstName").value,
@@ -87,12 +101,31 @@ export class CustomerSearchFormComponent implements OnInit {
       mobilePhone : this.searchForm.get("gsmNumber").value,
       accountNumber : this.searchForm.get("accountNumber").value,
     } as SearchRequest;
-
+  
     this.searchApiService.getSearchResult(searchRequest).subscribe((data) => {
       this.searchFilterResponse = data
       this.cdr.detectChanges()
     })
+  
+
+   /*  this.searchApiService.getSearchResult(searchRequest).subscribe({
+      next: (response) => {
+        this.isFirtstRender = true;
+       // this.filteredCustomers = response;
+        this.hasPrevious = this.filteredCustomers.hasPrevious;
+        this.hasNext = this.filteredCustomers.hasNext;
+        console.log(response);
+        this.activePage = searchRequest.page + 1;
+       // this.totalPage = response.totalPage;
+       // if (response.items.length < 1) {
+          this.customerCount = 0;
+        } else {
+        //  this.customerCount = response.items.length;
+        }
+      },
+    }); */
   }
+  
 
   clearForm(){
     this.searchForm.reset()
@@ -102,5 +135,23 @@ export class CustomerSearchFormComponent implements OnInit {
     this.router.navigate(['/create-customer'])
   }
 
+  goToPreviousPage() {
+    this.page -= 1;
+    this.search();
+  }
+
+  goToNextPage() {
+    this.page += 1;
+    this.search();
+  }
+
+  goToPage(activePage: number) {
+    this.page = activePage - 1;
+    this.search();
+  }
+
+  isActivePage(activePage: number) {
+    return activePage === this.activePage ? true : false;
+  }
 }
 
