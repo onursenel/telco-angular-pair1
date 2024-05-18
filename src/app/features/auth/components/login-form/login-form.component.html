@@ -6,34 +6,19 @@
 
         <div class="p-2">
             <form [formGroup]="loginForm" (submit)="onFormSubmit()">
-
-            <app-input 
-                inputClasses="genericLoginClass" 
-                labelClasses="genericLabelClass" 
-                type="email" 
-                inputId="userName"
-                placeholder="Username"    
-                [required]="true"
-                [control]="loginForm.get('userName')"
-                >
-                Username
-            </app-input>
-            <br>
-            <app-input 
-                inputClasses="genericLoginClass" 
-                labelClasses="genericLabelClass" 
-                type="password" 
-                inputId="password"
-                placeholder="Password"
-                [required]="true"
-                [control]="loginForm.get('password')"
-                >
-                Password
-            </app-input>
+                <app-input inputClasses="genericLoginClass" labelClasses="genericLabelClass" type="email"
+                    inputId="userName" placeholder="Username" [required]="true" [control]="loginForm.get('userName')">
+                    Username
+                </app-input>
+                <br>
+                <app-input inputClasses="genericLoginClass" labelClasses="genericLabelClass" type="password"
+                    inputId="password" placeholder="Password" [required]="true" [control]="loginForm.get('password')">
+                    Password
+                </app-input>
                 <div class="input-container remember-me mt-2 px-2">
                     <input type="checkbox" id="remember-me" name="remember-me">
                     <label for="remember-me" class="remember-me-checkbox">Remember me</label>
-                </div> 
+                </div>
                 <app-button type="submit" buttonClasses="login-btn">Login</app-button>
             </form>
         </div>
