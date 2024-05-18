@@ -1,5 +1,4 @@
 export interface GetLoginResponse {
-    id: number;
-    userName: string;
-    password: string;
-  }
+  access_token: string
+  success: boolean
+}

@@ -19,6 +19,7 @@ import { CreateBillingAccountPageComponent } from './routers/create-billing-acco
 import { UpdateBillingAccountPageComponent } from './routers/update-billing-account-page/update-billing-account-page.component';
 import { CustomerInformationPageComponent } from './routers/customer-information-page/customer-information-page.component';
 import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
+import { securedRouteGuard } from './shared/guards/SecuredRoute.guard';
 export const routes: Routes = [
 
 
@@ -78,6 +79,7 @@ export const routes: Routes = [
   {
     path: 'customer-search',
     component: CustomerSearchPageComponent,
+    canActivate: [securedRouteGuard]
   }, 
   {
     path: 'contact-medium',

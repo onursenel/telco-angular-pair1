@@ -8,17 +8,21 @@ export const securedRouteGuard: CanActivateFn = (route, state) => {
         router.navigate(['/not-found']);
         return false;
     };
-
+    const userRole = localStorage.getItem('user_roles')
     //izin yok
     if (!localStorage.getItem('token')) return redirectNotAuthorized();
-    if (!localStorage.getItem('user_roles')) return redirectNotAuthorized();
+    if (userRole !== 'admin') return redirectNotAuthorized();
+    
+    console.log(userRole)
 
-    const userRoles = JSON.parse(localStorage.getItem('user_roles')!);
-    const requiredUserRole = route.data['requiredUserRole'];
 
-    if (!userRoles.includes(requiredUserRole)) {
-        return redirectNotAuthorized();
-    }
+
+    //const userRoles = JSON.parse(localStorage.getItem('user_roles')!);
+    //const requiredUserRole = route.data['requiredUserRole'];
+
+    //if (!userRoles.includes(requiredUserRole)) {
+    //    return redirectNotAuthorized();
+    //}
     return true;
 };
 
