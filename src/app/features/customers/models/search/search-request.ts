@@ -6,4 +6,6 @@ export interface SearchRequest{
     orderNumber:string;
     mobilePhone:string;
     accountNumber:string;
+    page: number;
+    size: number;
 }

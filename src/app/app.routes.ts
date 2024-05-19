@@ -36,6 +36,11 @@ export const routes: Routes = [
     canActivate: [securedRouteGuard],
     component: MainLayoutComponent,
     children: [
+      // {
+      //   path: '',
+      //   pathMatch: 'full',
+      //   component: CustomerSearchPageComponent,
+      // },
       {
         path: 'customer-information/:id', 
         component: CustomerInformationPageComponent,

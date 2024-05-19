@@ -1,10 +1,12 @@
 .general-box{
     background-color: white;
     border: solid black 2px;
-    height: 600px;
+    height: 660px;
     margin-right: 2.1rem;
+    margin-top: 1rem;
     padding-right: 2rem;
     padding-left: 2rem;
+
 }
 
 .label-background{
@@ -16,6 +18,7 @@
     border:  solid black 2px;
     padding: 10px;
     text-align: left;
+    margin-top: 1rem;
     
   display: flex;
   flex-direction: column;
@@ -54,4 +57,39 @@
   }
   .table-background-color1{
     background-color:#2D355A;
+  }
+
+
+  .paginate-nav {
+    padding-left: 40%;
+    padding-top: 1rem;
+  
+    ul {
+      li {
+        cursor: pointer;
+        padding-right: 5px;
+        a {
+          font-family: "Inter", sans-serif;
+          font-size: 1rem;
+          font-weight: 400;
+          color: black;
+          background: #d9d9d9;
+          user-select: none;
+        }
+  
+        .page-number {
+          border-radius: 20%;
+        }
+      }
+      li.active {
+        a {
+          background: #afafaf;
+        }
+      }
+    }
+  }
+  .title{
+    background-color: white;
+    position: absolute;
+    top: 9rem;
   }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { SelectOptionComponent } from '../../../../shared/components/select-option/select-option.component';
@@ -11,6 +11,7 @@ import { setIndividualCustomer } from '../../../../shared/store/customers/indivi
 import { Router } from '@angular/router';
 import { selectIndividualCustomer } from '../../../../shared/store/customers/individual-customer.selector';
 import { ErrorMessagesPipe } from '../../../../core/pipes/error-messages.pipe';
+import { tcValidator } from './tcValidator';
 
 @Component({
   selector: 'app-create-customer-form',
@@ -40,7 +41,7 @@ export class CreateCustomerFormComponent implements OnInit {
       .pipe(select(selectIndividualCustomer))
       .subscribe((individualCustomer) => {
         this.form.patchValue(individualCustomer);
-        console.log('individualCustomerState:', individualCustomer);
+        console.log('individualCustomerState:', individualCustomer)
       });
   }
 
@@ -71,6 +72,7 @@ export class CreateCustomerFormComponent implements OnInit {
       nationalityId: ['',[
         Validators.required,
         Validators.pattern('^[1-9]{1}[0-9]{9}[02468]{1}$'),
+        tcValidator()
       ]],
     });
   }

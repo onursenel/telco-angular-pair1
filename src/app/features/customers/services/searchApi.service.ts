@@ -8,7 +8,7 @@ import { SearchResponse } from '../models/search/search-response';
   providedIn: 'root'
 })
 export class SearchApiService {
-
+  apiUrl = 'http://localhost:8082/api/v1/search-service';
   constructor(private http: HttpClient) { }
 
   getSearchResult(searchRequest: SearchRequest): Observable<SearchResponse[]> {
@@ -16,6 +16,12 @@ export class SearchApiService {
     for (let key in searchRequest) {
       if (searchRequest[key]) {
         httpParams = httpParams.set(key, searchRequest[key])
+      }
+      if (searchRequest.page >= 0) {
+        this.apiUrl = this.apiUrl + 'page=' + searchRequest.page + '&';
+      }
+      if (searchRequest.size >= 0) {
+        this.apiUrl = this.apiUrl + 'size=' + searchRequest.size + '&';
       }
     }
 
