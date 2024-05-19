@@ -1,22 +1,22 @@
-<div class="container">
+<div class="container" *ngIf="!activateEditMode">
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
                 <div class="col">
                     <label for="e-mail">First Name:</label>
-                    <label for="e-mail-descreption" class="descreption">descreption</label>
+                    <label for="e-mail-descreption" class="descreption">{{customerInfos.firstName}}</label>
                 </div>
                 <div class="col">
                     <label for="mobil-phone">Last Name:</label>
-                    <label for="mobil-phone-descreption" class="descreption">descreption</label>
+                    <label for="mobil-phone-descreption" class="descreption">{{customerInfos.lastName}}</label>
                 </div>
                 <div class="col">
                     <label for="mobil-phone">Gender:</label>
-                    <label for="mobil-phone-descreption" class="descreption">descreption</label>
+                    <label for="mobil-phone-descreption" class="descreption">{{customerInfos.gender}}</label>
                 </div>
                 <div class="col">
                     <label for="mobil-phone">Mother Name:</label>
-                    <label for="mobil-phone-descreption" class="descreption">descreption</label>
+                    <label for="mobil-phone-descreption" class="descreption">{{customerInfos.motherName}}</label>
                 </div>
             </div>
         </div>
@@ -24,21 +24,74 @@
             <div class="form-group">
                 <div class="col">
                     <label for="home-phone">Middle Name:</label>
-                    <label for="home-phone-descreption" class="descreption">descreption</label>
+                    <label for="home-phone-descreption" class="descreption">{{customerInfos.middleName}}</label>
                 </div>
                 <div class="col">
                     <label for="fax">Birth Date:</label>
-                    <label for="fax-descreption" class="descreption">descreption</label>
+                    <label for="fax-descreption" class="descreption">{{customerInfos.birthDate}}</label>
                 </div>
                 <div class="col">
                     <label for="fax">Father Name:</label>
-                    <label for="fax-descreption" class="descreption">descreption</label>
+                    <label for="fax-descreption" class="descreption">{{customerInfos.fatherName}}</label>
                 </div>
                 <div class="col">
                     <label for="fax">Nationality ID:</label>
-                    <label for="fax-descreption" class="descreption">descreption</label>
+                    <label for="fax-descreption" class="descreption">{{customerInfos.firstName}}</label>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="activateEditMode">
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col">
+                        <app-input type="text" [control]="form.get('firstName')">First Name : </app-input>
+                    </div>
+                    <div class="col">
+                        <app-input type="text" [control]="form.get('lastName')">Last Name : </app-input>
+                    </div>
+                    <div class="col">
+                        <label for="gender">Gender</label>
+                        <select formControlName="gender"  id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <app-input [control]="form.get('motherName')"  type="text">Mother Name : </app-input>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="col">
+                        <app-input  [control]="form.get('middleName')" type="text">Middle Name : </app-input>
+                    </div>
+                    <div class="col">
+                        <label for="birthDate">Birth Date</label>
+                        <input formControlName="birthDate"  type="date" id="birthDate">
+                    </div>
+                    <div class="col">
+                        <app-input  [control]="form.get('fatherName')" type="text">Father Name : </app-input>
+                    </div>
+                    <div class="col">
+                        <app-input  [control]="form.get('nationalityId')" type="text">Nationality ID : </app-input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="button-box">
+        <div class="cancel-button">
+            <app-button buttonClasses="cancel-save-button" (click)="cancelEditMode.emit(false)">Cancel</app-button>
+        </div>
+        <div class="save-button">
+            <app-button buttonClasses="cancel-save-button" (click)="saveCustomerInfo()">Save</app-button>
         </div>
     </div>
 </div>

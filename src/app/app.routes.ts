@@ -33,10 +33,11 @@ export const routes: Routes = [
   {
     path: 'home',
     pathMatch:'prefix',
+    canActivate: [securedRouteGuard],
     component: MainLayoutComponent,
     children: [
       {
-        path: 'customer-information', 
+        path: 'customer-information/:id', 
         component: CustomerInformationPageComponent,
       },
       {
@@ -65,15 +66,17 @@ export const routes: Routes = [
 
   {
     path: 'auth-login',
-    component: LoginPageComponent,
+    component: LoginPageComponent
   },
   {
     path: 'create-customer',//children olucak : contact medium  ve address information vs...
     component: CreateCustomerPageComponent,
+    canActivate: [securedRouteGuard]
   },
   {
     path: 'address-information',
     component: AddressInformationPageComponent,
+    canActivate: [securedRouteGuard]
   },
  
   {
@@ -84,27 +87,33 @@ export const routes: Routes = [
   {
     path: 'contact-medium',
     component: CreateContactMediumPageComponent,
+    canActivate: [securedRouteGuard]
   },
   {
     path: 'offer-selection',
     component: OfferSelectionPageComponent,
+    canActivate: [securedRouteGuard]
   },
   {
     path: 'submit-order',
     component: SubmitOrderPageComponent,
+    canActivate: [securedRouteGuard]
   },
   {
     path: 'configuration-product',
     component: ConfigurationProductPageComponent,
+    canActivate: [securedRouteGuard]
   },
  
   {
     path: 'create-billing-account',
     component: CreateBillingAccountPageComponent,
+    canActivate: [securedRouteGuard]
   },
   {
     path: 'update-billing-account',
     component: UpdateBillingAccountPageComponent,
+    canActivate: [securedRouteGuard]
   },
   {
     path: 'not-found',

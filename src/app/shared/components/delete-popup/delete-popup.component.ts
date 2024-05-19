@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { CustomerApiService } from '../../../features/customers/services/customerApi.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'delete-popup',
@@ -11,4 +13,17 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: `./delete-popup.component.scss`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DeletePopupComponent { }
+export class DeletePopupComponent {
+  constructor(private customerApiService: CustomerApiService, private activatedRoute: ActivatedRoute, private router: Router){}
+  @Input()
+  clickYes: () => void;
+
+  @Input()
+  clickNo: () => void;
+
+  @Input()
+  description: string;
+
+  @Input()
+  title: string;
+}

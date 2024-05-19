@@ -17,3 +17,34 @@ body {
 .float-right{
     float: right;
   }
+
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group .col {
+    margin-bottom: 6.43rem; // İstediğiniz boşluk miktarını ayarlayabilirsiniz
+}
+.button-box{
+    position: absolute;
+    right:10rem;
+}
+.cancel-button{
+    position: absolute;
+    right:8rem;
+}
+
+.add-new-address-button {
+    width: 12.5rem;
+    height: 4rem;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.add-new-address-button{
+    align-content: center;
+    text-align: center;
+}
+

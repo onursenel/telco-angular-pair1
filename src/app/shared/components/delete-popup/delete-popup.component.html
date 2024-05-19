@@ -1,13 +1,12 @@
 <div class="popup-container">
-    <div class="top-section">
-      <p >Delete Account</p>
-    </div>
-    <div class="middle-section">
-      <p>Are you sure to delete this billing account?</p>
-    </div>
-    <div class="bottom-section">
-      <button >Yes</button>
-      <button >No</button>
-    </div>
+  <div class="top-section">
+    <p>{{title}}</p>
+  </div>
+  <div class="middle-section">
+    <p>{{description}}</p>
+  </div>
+  <div class="bottom-section">
+    <button (click)="clickYes()">Yes</button>
+    <button (click)="clickNo()">No</button>
+  </div>
 </div>
-  

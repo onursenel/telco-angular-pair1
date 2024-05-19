@@ -1,4 +1,4 @@
-<button type="button" class="addAddressButton" (click)="openPopup()">New Address</button>
+<button type="button" class="add-new-address-button" (click)="openPopup()">New Address</button>
 
 <div id="myModal" class="modal fade " tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -15,8 +15,7 @@
                         <div class="input-container">
                             <label for="city">City</label>
                             <select id="city" formControlName="cityId">
-                                <option selected>Select</option>
-                                <option value="1">Seçenek 1</option>
+                                <option *ngFor="let city of cityList" [value]="city.id">{{city.name}}</option>
                             </select>
                         </div>
 

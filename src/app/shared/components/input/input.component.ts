@@ -20,6 +20,7 @@ export class InputComponent {
   @Input() labelClasses: string = '';
   @Input() inputClasses: string = '';
   @Input() required: boolean = false;
+  @Input() value: string | number = '';
   @Input() control: FormControl | any | null;
   passwordType: string = "password"
   showPassword: boolean = false;

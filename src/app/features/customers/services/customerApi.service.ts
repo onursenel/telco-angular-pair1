@@ -30,8 +30,8 @@ export class CustomerApiService {
     );
   }
 
-  put(id:string,customer: UpdateCustomerRequest): Observable<UpdateCustomerResponse> {
-    return this.http.post<UpdateCustomerResponse>(
+  put(customer: UpdateCustomerRequest): Observable<GetCustomerResponse> {
+    return this.http.put<GetCustomerResponse>(
       'http://localhost:8081/api/v1/individualCustomers',
       customer
     );
@@ -40,6 +40,13 @@ export class CustomerApiService {
 
   getById(customerId: string): Observable<GetCustomerResponse> {
     return this.http.get<GetCustomerResponse>(
+      'http://localhost:8081/api/v1/individualCustomers/' + customerId,
+    );
+  }
+
+  
+  delete(customerId: string): Observable<any> {
+    return this.http.delete<any>(
       'http://localhost:8081/api/v1/individualCustomers/' + customerId,
     );
   }

@@ -4,4 +4,5 @@ export interface CreateAddressRequest{
     street: string;
     cityId: string;
     customerId: string;
+    addressId?: number
 }

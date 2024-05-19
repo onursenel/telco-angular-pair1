@@ -8,6 +8,7 @@ import { individualCustomerReducer } from './shared/store/customers/individual-c
 import { customerAddressReducer } from './shared/store/addresses/customer-address.reducer';
 import { contactMediumReducer } from './shared/store/contactMediums/contact-medium.reducer';
 import { authInterceptor } from './shared/intercepters/auth.interceptor';
+import { customerAddressInformationReducer } from './shared/store/address-information/address-information.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideStore(),
     provideState({name:'individualCustomer',reducer:individualCustomerReducer}),
     provideState({name:'customerAddress',reducer:customerAddressReducer}),
+    provideState({name:'customerAddressInformation',reducer:customerAddressInformationReducer}),
     provideState({name:'contactMedium',reducer:contactMediumReducer}),
     provideHttpClient(withInterceptors([authInterceptor]))
 ],

@@ -9,6 +9,9 @@ import { CreateAddressRequest } from '../../models/address/create-address-reques
 import { selectCustomerAddress } from '../../../../shared/store/addresses/customer-address.selector';
 
 import { setCustomerAddress } from '../../../../shared/store/addresses/customer-address.action';
+import { CustomerAddressState } from '../../../../shared/store/addresses/customer-address.state';
+import { CityApiService } from '../../../cities/services/city-api.service';
+import { CityListResponse } from '../../models/city/city-liste-response';
 
 
 @Component({
@@ -25,16 +28,24 @@ import { setCustomerAddress } from '../../../../shared/store/addresses/customer-
 })
 export class CreateAddressFormComponent implements OnInit {
 
-
+  @Output()
+  address = new EventEmitter <CreateAddressRequest>()
+  cityList: CityListResponse[];
   form!: FormGroup
   constructor(
     private fb: FormBuilder,
     private store: Store<{ customerAddress: CreateAddressRequest }>,
-    private router: Router
+    private router: Router,
+    private cityApiService: CityApiService
   ) { }
 
   ngOnInit(): void {
     this.createForm();
+    this.cityApiService.getList().subscribe((data)=>{
+      this.cityList = data.items;
+      console.log(this.cityList)
+    })
+    
     this.store
       .pipe(select(selectCustomerAddress))
       .subscribe((customerAddress) => {
@@ -62,8 +73,8 @@ export class CreateAddressFormComponent implements OnInit {
       customerId: ''
     };
     this.store.dispatch(setCustomerAddress({ customerAddress }));
-    this.router.navigate(['contact-medium']);
-
+    this.closePopup();
+    this.address.emit(customerAddress)
   }
   onFormSubmit() {
     const myModal = document.getElementById('myModal');

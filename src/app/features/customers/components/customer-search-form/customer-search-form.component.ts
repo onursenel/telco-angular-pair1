@@ -31,6 +31,7 @@ import { SearchResponse } from '../../models/search/search-response';
 export class CustomerSearchFormComponent implements OnInit {
   searchForm!: FormGroup;
   searchFilterResponse: SearchResponse[] = [];
+  showNotFoundText: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -90,6 +91,11 @@ export class CustomerSearchFormComponent implements OnInit {
 
     this.searchApiService.getSearchResult(searchRequest).subscribe((data) => {
       this.searchFilterResponse = data
+      if(!this.searchFilterResponse.length){
+        this.showNotFoundText = true
+      }else{
+        this.showNotFoundText = false;
+      }
       this.cdr.detectChanges()
     })
   }
@@ -100,6 +106,10 @@ export class CustomerSearchFormComponent implements OnInit {
 
   goCreateForm(){
     this.router.navigate(['/create-customer'])
+  }
+
+  navigateToCustomerPage(customerId: string): void{
+    this.router.navigate(['/home/customer-information/'+customerId])
   }
 
 }

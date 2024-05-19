@@ -1,28 +1,29 @@
 <div class="input-background">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+    <div class="container">
+    <div class="row">
+        <div *ngFor="let address of addresses$ | async" class="col-md-6">
             <div class="address-box mb-0">
                 <div class="row">
                     <div class="col-md-10">
-                        <p>Ankara, 610.Cadde, 33/12, Alize Apartmanı</p>
+                        <p>{{address.description}}</p>
                     </div>
                     <div class="col-md-2">
                         <div class="actions">
-                            <div class="menu-btn" (click)="toggleMenu(1)">
+                            <div class="menu-btn" (click)="toggleMenu(address.addressId)">
                                 <div class="dot"></div>
                                 <div class="dot"></div>
                                 <div class="dot"></div>
                             </div>
-                            <div class="menu-items" [class.show]="isMenu1Open">
+                            <div class="menu-items" *ngIf="selectedAddressId === address.addressId">
                                 <!-- Edit and Delete buttons -->
                                 <app-button buttonClasses="edit-button">Edit</app-button>
-                                <app-button buttonClasses="edit-button">Delete</app-button>
+                                <app-button buttonClasses="edit-button" (click)="deleteAddress()">Delete</app-button>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
+
+
                 <div class="form-check primary-checkbox">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                     <label class="form-check-label" for="flexRadioDefault2">
@@ -31,45 +32,22 @@
                 </div>
 
             </div>
+            
+        </div>
+
+        <div *ngIf="(addresses$ | async)?.length < 2" class="col-md-6">
+            <div class="address-box mb-0"><etiya-create-address-form (address)="handleCustomerAddress($event)"></etiya-create-address-form></div>
+        </div>
+    <div class="row">
+        <div class="col-6">
             <app-button type="button" routerLink="/create-customer" buttonClasses="page-controller-left-btn"
                 style="margin-top: 1rem;">Previous</app-button>
         </div>
-        <div class="col-md-6">
-            <div class="address-box mb-0">
-                <div class="row">
-                    <div class="col-md-10">
-                        <p>Ankara, 610.Cadde, 33/12, Alize Apartmanı</p>
-                        <etiya-create-address-form></etiya-create-address-form>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="actions">
-                            <div class="menu-btn" (click)="toggleMenu(2)">
-                                <div class="dot"></div>
-                                <div class="dot"></div>
-                                <div class="dot"></div>
-                            </div>
-                            <div class="menu-items" [class.show]="isMenu2Open">
-                                <!-- Edit and Delete buttons -->
-                                <app-button type="button"  buttonClasses="edit-button">Edit</app-button>
-                                <app-button buttonClasses="edit-button">Delete</app-button>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                    
-                </div>
-                <div class="form-check primary-checkbox">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Select as a primary address
-                    </label>
-                </div>
-                
-                
-
-            </div>
-            <app-button type="submit" class="float-right"  buttonClasses="page-controller-right-btn" style="margin-top: 1rem;">Next</app-button>
+        <div class="col-6">
+            <app-button type="button" routerLink="/contact-medium" class="float-right" buttonClasses="page-controller-right-btn"
+                style="margin-top: 1rem;">Next</app-button>
         </div>
     </div>
+    </div>
+</div>
 </div>

@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginApiService } from '../../services/login-api.service';
 import { PostLoginRequest } from '../../models/request/post-login-request';
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { Router } from '@angular/router';
+import { ErrorMessagesPipe } from '../../../../core/pipes/error-messages.pipe';
 
 @Component({
   selector: 'etiya-login-form',
@@ -14,7 +15,8 @@ import { Router } from '@angular/router';
     CommonModule,
     ReactiveFormsModule,
     InputComponent,
-    ButtonComponent
+    ButtonComponent,
+    ErrorMessagesPipe
   ],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss',
@@ -22,11 +24,12 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
 
-
+  showError: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private loginApiService: LoginApiService,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) { }
 
   loginForm = this.formBuilder.group({
@@ -54,6 +57,8 @@ export class LoginFormComponent implements OnInit {
         console.info('Response:', response);
       },
       error: (error) => {
+        this.showError = true;
+        this.cdr.detectChanges();
         console.error('Error:', error);
       },
       complete: () => {

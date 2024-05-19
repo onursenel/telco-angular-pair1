@@ -31,8 +31,7 @@ export class CreateCustomerFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private store : Store<{individualCustomer:CreateCustomerRequest}>,
-    private router : Router,
-    private customerApiService : CustomerApiService
+    private router : Router
   ){}
 
   ngOnInit(): void {

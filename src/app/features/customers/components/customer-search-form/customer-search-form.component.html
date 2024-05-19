@@ -53,7 +53,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let customer of searchFilterResponse" class="bg-primary">
-                                <td>{{customer.id}}</td>
+                                <td (click)="navigateToCustomerPage(customer.id)">{{customer.id}}</td>
                                 <td>{{customer.firstName}}</td>
                                 <td>{{customer.middleName}}</td>
                                 <td>{{customer.lastName}}</td>
@@ -63,7 +63,7 @@
                             
                         </tbody>
                     </table>
-                    <div *ngIf="!searchFilterResponse.length">
+                    <div *ngIf="showNotFoundText">
                         <p>No customer found! Would you like 
                             to create the customer?</p>
                             <app-button (click)="goCreateForm()"  type="button" buttonClasses="create-customer-button-in-customer-search-page">Create Customer </app-button>

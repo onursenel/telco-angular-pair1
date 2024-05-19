@@ -10,11 +10,29 @@
                     inputId="userName" placeholder="Username" [required]="true" [control]="loginForm.get('userName')">
                     Username
                 </app-input>
+                <div class="mt-3" *ngIf="
+              loginForm.controls['userName'].errors !== null &&
+              loginForm.get('userName')?.touched
+            ">
+                    <p class="wrong-login fw-bold">
+                        {{ loginForm.get("userName")?.errors | errorMessages }}
+                    </p>
+                </div>
                 <br>
                 <app-input inputClasses="genericLoginClass" labelClasses="genericLabelClass" type="password"
                     inputId="password" placeholder="Password" [required]="true" [control]="loginForm.get('password')">
                     Password
                 </app-input>
+                <div class="mt-3" *ngIf="
+              loginForm.controls['password'].errors !== null &&
+              loginForm.get('password')?.touched
+            ">
+                    <p class="wrong-login fw-bold">
+                        {{ loginForm.get("password")?.errors | errorMessages }}
+                    </p>
+                </div>
+                <p *ngIf="showError" class="wrong-login fs-4 fw-bold text-center">Wrong username or password. Please try
+                    again.</p>
                 <div class="input-container remember-me mt-2 px-2">
                     <input type="checkbox" id="remember-me" name="remember-me">
                     <label for="remember-me" class="remember-me-checkbox">Remember me</label>

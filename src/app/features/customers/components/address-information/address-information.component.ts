@@ -1,12 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
-import {  RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { CreateAddressFormComponent } from '../create-address-form/create-address-form.component';
-import { GetListResponse } from '../../../../shared/models/get-list-response';
-import { AddressListResponse } from '../../models/address/address-list-response';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { AddressApiService } from '../../services/addressApi.service';
+import { Store } from '@ngrx/store';
+import { CustomerAddressState } from '../../../../shared/store/addresses/customer-address.state';
+import { CreateAddressRequest } from '../../models/address/create-address-request';
+import { setCustomerAddress } from '../../../../shared/store/addresses/customer-address.action';
+import { setCustomerAddressInformation } from '../../../../shared/store/address-information/address-information.action';
+import { selectCustomerAddressInformation } from '../../../../shared/store/address-information/address-information.selector';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'etiya-address-information',
@@ -23,6 +26,14 @@ import { AddressApiService } from '../../services/addressApi.service';
 })
 export class AddressInformationComponent {
 
+  addresses$: Observable<CreateAddressRequest[]> = this.store.select(selectCustomerAddressInformation);
+  selectedAddressId: number = 0;
+
+  isMenu1Open = false;
+  isMenu2Open = false;
+
+  constructor(private store: Store, private cdr: ChangeDetectorRef) { }
+
   openPopup() {
     const myModal = document.getElementById('myModal');
     if (myModal) {
@@ -33,24 +44,27 @@ export class AddressInformationComponent {
       document.body.appendChild(backdrop);
     }
   }
-  isMenu1Open = false;
-  isMenu2Open = false;
 
   toggleMenu(menuNumber: number) {
-    if (menuNumber === 1) {
-      this.isMenu1Open = !this.isMenu1Open;
-      this.isMenu2Open = false; // Kapatılması gereken diğer menüyü kapat
-    } else if (menuNumber === 2) {
-      this.isMenu2Open = !this.isMenu2Open;
-      this.isMenu1Open = false; // Kapatılması gereken diğer menüyü kapat
+    if (this.selectedAddressId === menuNumber) { this.selectedAddressId = 0 } else {
+
+      this.selectedAddressId = menuNumber;
+      this.cdr.detectChanges();
     }
+
   }
 
   closeMenu() {
     this.isMenu1Open = false;
     this.isMenu2Open = false;
   }
-  
 
-  
+
+  handleCustomerAddress(address: CreateAddressRequest) {
+    this.store.dispatch(setCustomerAddressInformation({ customerAddress: { ...address, addressId: Math.floor(Math.random() * (100000 - 0 + 1) + 0) } }));
+  }
+
+  deleteAddress(){
+    //to do: delete address from state
+  }
 }
