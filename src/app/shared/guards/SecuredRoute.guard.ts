@@ -9,7 +9,7 @@ export const securedRouteGuard: CanActivateFn = (route, state) => {
         return false;
     };
     const userRole = localStorage.getItem('user_roles')
-    //izin yok
+    
     if (!localStorage.getItem('token')) return redirectNotAuthorized();
     if (userRole !== 'admin') return redirectNotAuthorized();
     
