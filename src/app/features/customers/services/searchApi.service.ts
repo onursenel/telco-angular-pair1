@@ -26,7 +26,7 @@ export class SearchApiService {
     }
 
     return this.http.get<SearchResponse[]>(
-      'http://localhost:8082/api/v1/search-service',
+      'http://localhost:8001/filter-service/api/v1/search-service',
       { params: httpParams }
     );
   }
@@ -34,7 +34,7 @@ export class SearchApiService {
   getAllCustomers(): Observable<any> {
 
     return this.http.get<any>(
-      'http://localhost:8082/api/v1/search-service/getAll',
+      'http://localhost:8001/filter-service/api/v1/search-service/getAll',
 
     );
   }

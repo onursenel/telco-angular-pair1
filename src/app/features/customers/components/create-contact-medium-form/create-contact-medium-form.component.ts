@@ -38,6 +38,7 @@ export class CreateContactMediumFormComponent implements OnInit{
   form: FormGroup;
   address: CreateAddressRequest;
   isformValid : boolean=false;
+  customerId: string;
   
 
   constructor(
@@ -76,6 +77,7 @@ export class CreateContactMediumFormComponent implements OnInit{
       });
     this.customerApiService.post(customerFromState).pipe(
       switchMap( responseCustomer => {
+        this.customerId = responseCustomer.customerId
           customerIdFromFirstReq = responseCustomer.id;
           let newAddress: CreateAddressRequest = {
             customerId: responseCustomer.id,
@@ -96,7 +98,7 @@ export class CreateContactMediumFormComponent implements OnInit{
               return this.contactMediumApiService.post(contactMedium);
             })
           );
-      })).subscribe();
+      })).subscribe((data)=>{this.router.navigate(["/home/customer-information/"+this.customerId])});
   }
 
   
@@ -136,7 +138,7 @@ export class CreateContactMediumFormComponent implements OnInit{
       return;
     }
     this.makeRequests();
-    this.router.navigate(["/home/customer-information/:id"])
+    
   }
 
  }

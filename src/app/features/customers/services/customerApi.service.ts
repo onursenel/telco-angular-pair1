@@ -19,7 +19,7 @@ export class CustomerApiService {
 
   getList(): Observable<GetListResponse<CustomerListResponse[]>> {
     return this.http.get<GetListResponse<CustomerListResponse[]>>(
-      'http://localhost:8081/api/v1/individualCustomers'
+      'http://localhost:8001/customerservice/api/v1/individualCustomers'
     );
   }
 
