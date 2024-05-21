@@ -11,8 +11,7 @@
                     Username
                 </app-input>
                 <div class="mt-3" *ngIf="
-              loginForm.controls['userName'].errors !== null &&
-              loginForm.get('userName')?.touched
+              showRequiredWarning
             ">
                     <p class="wrong-login fw-bold">
                         {{ loginForm.get("userName")?.errors | errorMessages }}
@@ -24,8 +23,7 @@
                     Password
                 </app-input>
                 <div class="mt-3" *ngIf="
-              loginForm.controls['password'].errors !== null &&
-              loginForm.get('password')?.touched
+              showRequiredWarning
             ">
                     <p class="wrong-login fw-bold">
                         {{ loginForm.get("password")?.errors | errorMessages }}

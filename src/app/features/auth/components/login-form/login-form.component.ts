@@ -25,6 +25,8 @@ import { ErrorMessagesPipe } from '../../../../core/pipes/error-messages.pipe';
 export class LoginFormComponent implements OnInit {
 
   showError: boolean = false;
+  showRequiredWarning: boolean = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private loginApiService: LoginApiService,
@@ -72,9 +74,12 @@ export class LoginFormComponent implements OnInit {
 
     if (this.loginForm.invalid) {
       console.error('Form is invalid');
+      this.showRequiredWarning = true;
       return;
     }
 
     this.login();
   }
+
+
 }
