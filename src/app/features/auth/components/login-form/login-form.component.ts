@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginApiService } from '../../services/login-api.service';
-import { PostLoginRequest } from '../../models/request/post-login-request';
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { Router } from '@angular/router';
 import { ErrorMessagesPipe } from '../../../../core/pipes/error-messages.pipe';
+import { LoginRequest } from '../../models/request/register-request';
 
 @Component({
   selector: 'etiya-login-form',
@@ -43,7 +43,7 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void { }
 
   login() {
-    const request: PostLoginRequest = {
+    const request: LoginRequest = {
       userName: this.loginForm.value.userName,
       password: this.loginForm.value.password,
     };
