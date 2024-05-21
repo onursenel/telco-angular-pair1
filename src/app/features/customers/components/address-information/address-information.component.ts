@@ -10,6 +10,8 @@ import { setCustomerAddress } from '../../../../shared/store/addresses/customer-
 import { setCustomerAddressInformation } from '../../../../shared/store/address-information/address-information.action';
 import { selectCustomerAddressInformation } from '../../../../shared/store/address-information/address-information.selector';
 import { Observable } from 'rxjs';
+import { CityApiService } from '../../../cities/services/city-api.service';
+import { CityListResponse } from '../../models/city/city-liste-response';
 
 @Component({
   selector: 'etiya-address-information',
@@ -24,15 +26,25 @@ import { Observable } from 'rxjs';
   styleUrl: './address-information.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AddressInformationComponent {
+export class AddressInformationComponent implements OnInit{
 
   addresses$: Observable<CreateAddressRequest[]> = this.store.select(selectCustomerAddressInformation);
   selectedAddressId: number = 0;
-
+  cityList: CityListResponse[];
   isMenu1Open = false;
   isMenu2Open = false;
 
-  constructor(private store: Store, private cdr: ChangeDetectorRef) { }
+  constructor(private store: Store, private cdr: ChangeDetectorRef, private cityApiService: CityApiService) { }
+
+  ngOnInit(): void {
+    this.cityApiService.getList().subscribe((data)=>{
+      this.cityList = data.items;
+    })
+  }
+
+  getCityName(cityId: string): string{
+    return this.cityList.find(data=>data.id ===cityId).name;
+  }
 
   openPopup() {
     const myModal = document.getElementById('myModal');

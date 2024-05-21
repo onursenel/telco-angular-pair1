@@ -50,8 +50,8 @@ export class ContactMediumApiService {
     );
   }
 
-  getById(id: string): Observable<GetContactMediumResponse> {
-    return this.http.get<GetContactMediumResponse>(
+  getById(id: string): Observable<GetContactMediumResponse[]> {
+    return this.http.get<GetContactMediumResponse[]>(
       'http://localhost:8081/api/v1/contactMediums' + '/' + id
     );
   }

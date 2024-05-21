@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -30,21 +30,21 @@ export class CreateAddressFormComponent implements OnInit {
 
   @Output()
   address = new EventEmitter <CreateAddressRequest>()
+
+  @Input()
   cityList: CityListResponse[];
+  
   form!: FormGroup
   constructor(
     private fb: FormBuilder,
     private store: Store<{ customerAddress: CreateAddressRequest }>,
     private router: Router,
-    private cityApiService: CityApiService
+    
   ) { }
 
   ngOnInit(): void {
     this.createForm();
-    this.cityApiService.getList().subscribe((data)=>{
-      this.cityList = data.items;
-      console.log(this.cityList)
-    })
+    
     
     this.store
       .pipe(select(selectCustomerAddress))

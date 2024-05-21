@@ -18,11 +18,11 @@ export class AddressApiService {
   get(page: number,size: number,customerId: string | null): Observable<GetListResponse<AddressListResponse>> {
     if(customerId == null){
       return this.http.get<GetListResponse<AddressListResponse>>(
-        'http://localhost:8080/customerservice/api/v1/addresses?page=' + page + '&size=' + size);
+        'http://localhost:8081/api/v1/addresses?page=' + page + '&size=' + size);
     }
     else{
       return this.http.get<GetListResponse<AddressListResponse>>(
-        'http://localhost:8080/customerservice/api/v1/addresses?page=' + page + '&size=' + size + '&customerId=' + customerId);
+        'http://localhost:8081/api/v1/addresses?page=' + page + '&size=' + size + '&customerId=' + customerId);
     }
   }
 

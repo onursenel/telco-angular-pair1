@@ -5,7 +5,7 @@
             <div class="address-box mb-0">
                 <div class="row">
                     <div class="col-md-10">
-                    <p>{{address.houseNumber + ' ' + address.street + ' ' + address.description }}</p>
+                    <p>{{getCityName(address.cityId) + ' '+address.houseNumber + ' ' + address.street + ' ' + address.description }}</p>
                     </div>
                     <div class="col-md-2">
                         <div class="actions">
@@ -38,7 +38,7 @@
         </div>
 
         <div *ngIf="(addresses$ | async)?.length < 2" class="col-md-6">
-            <div class="address-box mb-0"><etiya-create-address-form (address)="handleCustomerAddress($event)"></etiya-create-address-form></div>
+            <div class="address-box mb-0"><etiya-create-address-form [cityList]="cityList" (address)="handleCustomerAddress($event)"></etiya-create-address-form></div>
         </div>
     <div class="row">
         <div class="col-6">
