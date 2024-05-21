@@ -23,7 +23,9 @@ import { ContacMediumInformationComponent } from '../../features/customers/compo
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InfoContactMediumPageComponent{ 
-  constructor(private router: Router,private activatedRoute: ActivatedRoute) {}
+  constructor(
+  private router: Router,
+  private activatedRoute: ActivatedRoute){}
   customerId: string;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {

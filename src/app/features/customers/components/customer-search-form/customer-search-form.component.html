@@ -2,7 +2,7 @@
     <h6 class="title">Search Customer</h6>
     <div class="row">
         <div class="col-md-4">
-            <div class="box">
+            <div class="box mx-3">
                 <div class="header">Search Filter</div>
                 <form  [formGroup]="searchForm">
                     <label class="input-text-label" >ID Number</label>
@@ -26,7 +26,6 @@
                     <label class="input-text-label">Order Number</label>
                     <app-input inputClasses="customer-search-page-input" type="text"
                         [required]="false" [control]="searchForm.get('orderNumber')"></app-input>
-
                     <app-button type="button" buttonClasses="customer-search-page-button" [isDisable]="disableClearButton"
                         (click)="clearForm()">
                         Clear</app-button>
@@ -53,7 +52,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let customer of searchFilterResponse" class="bg-primary">
-                                <td (click)="navigateToCustomerPage(customer.id)">{{customer.id}}</td>
+                                <td class="page-link" (click)="navigateToCustomerPage(customer.id)">{{customer.id}}</td>
                                 <td>{{customer.firstName}}</td>
                                 <td>{{customer.middleName}}</td>
                                 <td>{{customer.lastName}}</td>
