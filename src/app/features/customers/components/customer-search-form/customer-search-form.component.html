@@ -6,16 +6,16 @@
                 <div class="header">Search Filter</div>
                 <form  [formGroup]="searchForm">
                     <label class="input-text-label" >ID Number</label>
-                    <app-input inputClasses="customer-search-page-input" [control]="searchForm.get('idNumber')" type="text"
-                        [required]="false"></app-input>
+                    <app-input appNumberInput inputClasses="customer-search-page-input" [control]="searchForm.get('idNumber')" type="text"
+                        [required]="false" maxlength="11"></app-input>
                     <label class="input-text-label">Customer Id</label>
                     <app-input inputClasses="customer-search-page-input" type="text"
                         [required]="false" [control]="searchForm.get('customerId')"></app-input>
                     <label class="input-text-label">Account Number</label>
-                    <app-input inputClasses="customer-search-page-input" type="text"
+                    <app-input appNumberInput inputClasses="customer-search-page-input" type="text"
                         [required]="false" [control]="searchForm.get('accountNumber')"></app-input>
                     <label class="input-text-label">GSM Number</label>
-                    <app-input inputClasses="customer-search-page-input" type="text"
+                    <app-input appNumberInput inputClasses="customer-search-page-input" type="text"
                         [required]="false" [control]="searchForm.get('gsmNumber')"></app-input>
                     <label class="input-text-label">First Name</label>
                     <app-input inputClasses="customer-search-page-input" type="Text"
@@ -24,7 +24,7 @@
                     <app-input inputClasses="customer-search-page-input" type="Text"
                         [required]="false" [control]="searchForm.get('lastName')"> </app-input>
                     <label class="input-text-label">Order Number</label>
-                    <app-input inputClasses="customer-search-page-input" type="text"
+                    <app-input appNumberInput inputClasses="customer-search-page-input" type="text"
                         [required]="false" [control]="searchForm.get('orderNumber')"></app-input>
 
                     <app-button type="button" buttonClasses="customer-search-page-button" [isDisable]="disableClearButton"
