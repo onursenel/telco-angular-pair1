@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 import { selectIndividualCustomer } from '../../../../shared/store/customers/individual-customer.selector';
 import { ErrorMessagesPipe } from '../../../../core/pipes/error-messages.pipe';
 import { tcValidator } from './tcValidator';
+import { NumberInputDirective } from '../../../../core/directives/number-input.directive';
+import { CheckNationalityIdentityOnMernis } from '../../models/customer/check-nationality-identity-on-mernis-request';
 
 @Component({
   selector: 'app-create-customer-form',
@@ -22,17 +24,24 @@ import { tcValidator } from './tcValidator';
     InputComponent,
     SelectOptionComponent,
     ErrorMessagesPipe,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NumberInputDirective,
   ],
   templateUrl: './create-customer-form.component.html',
   styleUrl: './create-customer-form.component.scss',
 })
 export class CreateCustomerFormComponent implements OnInit {
-  form!: FormGroup
+  form!: FormGroup;
+  currentDate = new Date();
+  eighteenYearsAgo = new Date(this.currentDate.getFullYear() - 18, this.currentDate.getMonth(), this.currentDate.getDate());
+  formattedDate = `${this.eighteenYearsAgo.getFullYear()}-${String(this.eighteenYearsAgo.getMonth() + 1).padStart(2, '0')}-${String(this.eighteenYearsAgo.getDate()).padStart(2, '0')}`;
+  
+  checkNationalityIdentityOnMernis: CheckNationalityIdentityOnMernis;
   constructor(
     private fb: FormBuilder,
     private store : Store<{individualCustomer:CreateCustomerRequest}>,
-    private router : Router
+    private router : Router,
+    private customerApiService : CustomerApiService,
   ){}
 
   ngOnInit(): void {
@@ -91,6 +100,23 @@ export class CreateCustomerFormComponent implements OnInit {
     this.router.navigate(['address-information']);
     
   }
+  checkNationalityIdentityRequest() {
+    const birthDateValue = this.form.value.birthDate;
+    let birthDate: Date;
+  
+    if (typeof birthDateValue === 'string') {
+      birthDate = new Date(birthDateValue);
+    } else {
+      birthDate = birthDateValue;
+    }
+    this.checkNationalityIdentityOnMernis ={
+      nationalityId:this.form.value.nationalityId,
+      firstName:this.form.value.firstName,
+      lastName:this.form.value.lastName,
+      birthDate:birthDate.getFullYear()
+    }
+  }
+
 
   onFormSubmit() {
     if (this.form.invalid) {

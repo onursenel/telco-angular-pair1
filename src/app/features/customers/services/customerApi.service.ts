@@ -51,6 +51,12 @@ export class CustomerApiService {
     );
   }
 
+  checkNationalityIdentityExists(nationalityId:String):Observable<Boolean>{
+    return this.http.get<Boolean>(
+      `http://localhost:8081/api/v1/individualCustomers/nationality-identity/${nationalityId}`
+    );
+  }
+
 
 
 }

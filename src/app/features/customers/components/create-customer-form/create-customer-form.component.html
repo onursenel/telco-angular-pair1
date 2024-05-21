@@ -77,14 +77,14 @@
           </div>
         <div class="input-container ">
           <label for="birthDate">Birth Date</label>
-          <input type="date" id="birthDate" formControlName="birthDate">
+          <input type="date" id="birthDate" formControlName="birthDate" min="1920-01-01" [max]="formattedDate">
         </div>
         <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="fatherName"
           [control]="form.get('fatherName')">
           Father Name
         </app-input>
-        <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="nationalityId"
-          [required]="true" [control]="form.get('nationalityId')">
+        <app-input appNumberInput inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="nationalityId"
+          [required]="true" [control]="form.get('nationalityId')" maxlength="11">
           Nationality ID
         </app-input>
         <div

@@ -17,6 +17,7 @@ import { selectIndividualCustomer } from '../../../../shared/store/customers/ind
 import { selectCustomerAddress } from '../../../../shared/store/addresses/customer-address.selector';
 import { switchMap } from 'rxjs';
 import { ErrorMessagesPipe } from '../../../../core/pipes/error-messages.pipe';
+import { NumberInputDirective } from '../../../../core/directives/number-input.directive';
 
 @Component({
   selector:'app-create-contact-medium-form',
@@ -28,6 +29,7 @@ import { ErrorMessagesPipe } from '../../../../core/pipes/error-messages.pipe';
     ReactiveFormsModule,
     ErrorMessagesPipe,
     RouterModule,
+    NumberInputDirective
   ],
   templateUrl: './create-contact-medium-form.component.html',
   styleUrl: './create-contact-medium-form.component.scss',
@@ -111,7 +113,7 @@ export class CreateContactMediumFormComponent implements OnInit{
         Validators.required,
         Validators.maxLength(11),
       ]],
-      fax: ['', Validators.required],
+      fax: [''],
     });
     
   }

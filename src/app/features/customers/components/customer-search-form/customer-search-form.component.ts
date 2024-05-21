@@ -12,6 +12,7 @@ import { first } from 'rxjs';
 import { SearchApiService } from '../../services/searchApi.service';
 import { SearchResponse } from '../../models/search/search-response';
 import { GetListResponse } from '../../../../shared/models/get-list-response';
+import { NumberInputDirective } from '../../../../core/directives/number-input.directive';
 
 @Component({
   selector: 'app-customer-search-form',
@@ -23,7 +24,8 @@ import { GetListResponse } from '../../../../shared/models/get-list-response';
     SidebarComponent,
     RouterModule,
     TableComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NumberInputDirective
   ],
   templateUrl: './customer-search-form.component.html',
   styleUrl: './customer-search-form.component.scss',

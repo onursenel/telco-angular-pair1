@@ -17,7 +17,7 @@
               {{ form.get("email")?.errors | errorMessages }}
             </p>
           </div>
-                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="number"
+                <app-input appNumberInput inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text"
                     inputId="mobilPhone" [required]="true" [control]="form.get('mobilePhone')">
                     Mobil Phone
                 </app-input>
@@ -34,7 +34,7 @@
           </div>
             </div>
             <div class="col-md-6">
-                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="number"
+                <app-input appNumberInput inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text"
                     inputId="homePhone" [control]="form.get('homePhone')">
                     Home Phone
                 </app-input>
@@ -49,7 +49,7 @@
               {{ form.get("homePhone")?.errors | errorMessages }}
             </p>
           </div>
-                <app-input inputClasses="genericInputClass" labelClasses="genericLabelClass" type="number" inputId="fax"
+                <app-input appNumberInput inputClasses="genericInputClass" labelClasses="genericLabelClass" type="text" inputId="fax"
                     [control]="form.get('fax')">
                     Fax
                 </app-input>
