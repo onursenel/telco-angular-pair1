@@ -12,7 +12,7 @@ export class ErrorMessagesPipe implements PipeTransform {
       return '';
     } else {
       if (errors['required']) {
-        return 'This field is required';
+        return 'Required field!';
       } else if (errors['minlength']) {
         return `This field must have minimum ${errors['minlength'].requiredLength} characters`;
       } else if (errors['maxlength']) {
