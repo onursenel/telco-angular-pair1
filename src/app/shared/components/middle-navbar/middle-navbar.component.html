@@ -1,7 +1,7 @@
 <div class="middle-navigate">
-    <app-button type="button" routerLink="/home/customer-information"  buttonClasses="middle-navbar-button">Customer Info</app-button>
-    <app-button type="button" routerLink="/home/account"  buttonClasses="middle-navbar-button">Customer Account</app-button>
-    <app-button type="button" routerLink="/home/address"  buttonClasses="middle-navbar-button">Address</app-button>
-    <app-button type="button" routerLink="/home/contact-medium"  buttonClasses="middle-navbar-button">Contact Medium</app-button>
+    <app-button type="button" buttonClasses="middle-navbar-button" (click)="navigateToPage('customer-information')" >Customer Info</app-button>
+    <app-button type="button" (click)="navigateToPage('account')" buttonClasses="middle-navbar-button">Customer Account</app-button>
+    <app-button type="button" (click)="navigateToPage('address')" buttonClasses="middle-navbar-button">Address</app-button>
+    <app-button type="button" (click)="navigateToPage('contact-medium')"  buttonClasses="middle-navbar-button">Contact Medium</app-button>
   </div>
   

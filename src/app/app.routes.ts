@@ -46,20 +46,20 @@ export const routes: Routes = [
         component: CustomerInformationPageComponent,
       },
       {
-        path: 'address', 
+        path: 'address/:id', 
         component: AddressTabEditDeleteComponent,
       },
       
       {
-        path: 'account', 
+        path: 'account/:id', 
         component: CustomerAccountsInformationPageComponent,
       },
       {
-        path: 'contact-medium', 
+        path: 'contact-medium/:id', 
         component: InfoContactMediumPageComponent,
       },
       {
-        path: 'contact-medium/update', 
+        path: 'contact-medium/update/:id', 
         component: UpdateContactMediumPageComponent,
       },
 

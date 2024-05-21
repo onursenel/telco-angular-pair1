@@ -71,7 +71,6 @@ export class CustomerInformationPageComponent implements OnInit {
         Validators.maxLength(30),
       ]],
       middleName: [this.customerInfos.middleName, [
-        Validators.minLength(2),
         Validators.maxLength(10),
       ]],
       lastName: [this.customerInfos.lastName, [

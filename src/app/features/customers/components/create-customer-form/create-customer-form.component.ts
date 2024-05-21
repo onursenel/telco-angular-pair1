@@ -54,7 +54,6 @@ export class CreateCustomerFormComponent implements OnInit {
         Validators.maxLength(30),
       ]],
       middleName: ['',[
-        Validators.minLength(2),
         Validators.maxLength(10),
       ]],
       lastName: ['',[

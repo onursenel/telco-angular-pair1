@@ -7,7 +7,7 @@ import { MiddleNavbarComponent } from '../../shared/components/middle-navbar/mid
 import { InputComponent } from '../../shared/components/input/input.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { AddressTabEditDeleteFormComponent } from '../../features/customers/components/address-tab-edit-delete-form/address-tab-edit-delete-form.component';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-address-tab-edit-delete',
@@ -30,5 +30,12 @@ import { RouterModule } from '@angular/router';
 
 })
 export class AddressTabEditDeleteComponent {
- 
+  constructor(private router: Router,private activatedRoute: ActivatedRoute) {}
+  customerId: string;
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      this.customerId = params['id'];
+    });
+    
+  }
 }

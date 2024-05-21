@@ -134,7 +134,7 @@ export class CreateContactMediumFormComponent implements OnInit{
       return;
     }
     this.makeRequests();
-    this.router.navigate(["/customer-search"])
+    this.router.navigate(["/home/customer-information/:id"])
   }
 
  }
